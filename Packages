@@ -117,21 +117,6 @@ Author: jjolano
 Name: RootBridge Framework
 
 Package: me.jjolano.hkmodule.dobby
-Version: 1.0.5
-Architecture: iphoneos-arm
-Maintainer: jjolano
-Installed-Size: 256
-Filename: root/me.jjolano.hkmodule.dobby_1.0.5_iphoneos-arm.deb
-Size: 37124
-MD5sum: 586becc506fee7b46bcb5ee843d4e45c
-SHA1: 3c605d664d19a07c770503996794572ab97ab6b4
-SHA256: 8f795e511171f618d04b12a621b76c70c93c7cfb5e3957ae9450b7f62ebf6e54
-Section: HookKit (Modules)
-Description: This module provides Dobby library support for HookKit Framework.
-Author: jjolano
-Name: HookKit Module (Dobby)
-
-Package: me.jjolano.hkmodule.dobby
 Version: 1.0.6
 Architecture: iphoneos-arm
 Maintainer: jjolano
@@ -143,6 +128,23 @@ Size: 24238
 MD5sum: cf3ebb979778eab317684c4828292457
 SHA1: 9e0be8885f6dd522549c3340e7b0c9f0ba3c58ef
 SHA256: b5d8653a4cc1912930eb2fd51e5b097ec1dfda63111b029af112a53671c728b7
+Section: HookKit (Modules)
+Description: This module provides Dobby library support for HookKit Framework.
+Author: jjolano
+Name: HookKit Module (Dobby)
+
+Package: me.jjolano.hkmodule.dobby
+Version: 1.0.7
+Architecture: iphoneos-arm
+Maintainer: jjolano
+Installed-Size: 216
+Pre-Depends: me.jjolano.fmwk.hookkit
+Depends: firmware (>= 14.0)
+Filename: root/me.jjolano.hkmodule.dobby_1.0.7_iphoneos-arm.deb
+Size: 23668
+MD5sum: 9d19d1134ac7fe862870edf1d16ffd1c
+SHA1: 56e8d2bf2f88d2c4939b70dabf8522c43bfe2af4
+SHA256: e5f2989f30751d4786813c90d94555e086b3276dbe531f6cfa5853aad0e13a9d
 Section: HookKit (Modules)
 Description: This module provides Dobby library support for HookKit Framework.
 Author: jjolano
