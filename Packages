@@ -440,7 +440,7 @@ Author: jjolano
 Name: Shadow
 
 Package: me.jjolano.shadow
-Version: 3.7.4
+Version: 3.7.5
 Architecture: iphoneos-arm
 Maintainer: jjolano
 Installed-Size: 1432
@@ -451,11 +451,11 @@ Suggests: com.ps.injectionfoundation
 Conflicts: me.jjolano.shadow.beta, me.jjolano.shadow.legacy
 Replaces: me.jjolano.shadow.beta
 Provides: me.jjolano.shadow.beta
-Filename: root/me.jjolano.shadow_3.7.4_iphoneos-arm.deb
-Size: 165118
-MD5sum: 51436940c4669be4bdcdb5f8f743b014
-SHA1: f198bc63f33f4b832aac7e0e801f2f16c82146ac
-SHA256: 78740e0843efca9edd2a08385313ed190bac9cd6b7845d6e5537299da1bbba80
+Filename: root/me.jjolano.shadow_3.7.5_iphoneos-arm.deb
+Size: 165076
+MD5sum: 312672c272706c65b7501f966523e6c8
+SHA1: ceeb3d5f62657c41cb9c84be8e9af8fec401a9af
+SHA256: df2e8746830196433ea7641f2fa3840e9bc652d8d9c6bb320284e1c429d5dcd5
 Section: System
 Description: A modern jailbreak detection bypass.
 Author: jjolano
@@ -823,7 +823,7 @@ Author: jjolano
 Name: Shadow
 
 Package: me.jjolano.shadow
-Version: 3.7.4
+Version: 3.7.5
 Architecture: iphoneos-arm64
 Maintainer: jjolano
 Installed-Size: 1080
@@ -834,11 +834,11 @@ Suggests: com.ps.injectionfoundation
 Conflicts: me.jjolano.shadow.beta, me.jjolano.shadow.legacy
 Replaces: me.jjolano.shadow.beta
 Provides: me.jjolano.shadow.beta
-Filename: rootless/me.jjolano.shadow_3.7.4_iphoneos-arm64.deb
-Size: 100770
-MD5sum: f3acf75b04b369139e6624622be148fc
-SHA1: b51898bf8f47f64cddfadc5f5710b051b2ab424a
-SHA256: af191e8d9191ffe649b88071ed49ffd57ec8f9cbef97ae3b28a8466928161b4f
+Filename: rootless/me.jjolano.shadow_3.7.5_iphoneos-arm64.deb
+Size: 100466
+MD5sum: bdd3a2fabde2f5361ef15b2fed5b1025
+SHA1: f46dbd21a5d92171f7d5133c575ac2aa75341222
+SHA256: e162945f37aae6925b14cd5ea902a196e9f390f4cf81cfd15106db92508d5102
 Section: System
 Description: A modern jailbreak detection bypass.
 Author: jjolano
