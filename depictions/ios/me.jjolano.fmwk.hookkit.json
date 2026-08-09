@@ -1,0 +1,30 @@
+{
+  "class": "DepictionTabView",
+  "tabs": [
+    {
+      "class": "DepictionStackView",
+      "tabname": "Details",
+      "views": [
+        {
+          "class": "DepictionHeaderView",
+          "title": "HookKit Framework",
+          "subtitle": "me.jjolano.fmwk.hookkit"
+        },
+        {
+          "class": "DepictionMarkdownView",
+          "markdown": "An iOS developer framework for unified hooking methods."
+        },
+        {
+          "class": "DepictionMarkdownView",
+          "markdown": "**Supported variants:** rootful (`iphoneos-arm`), rootless (`iphoneos-arm64`), roothide (`iphoneos-arm64e`)"
+        },
+        {
+          "class": "DepictionTableButtonView",
+          "title": "Source Code",
+          "action": "https://github.com/jjolano/HookKit",
+          "openExternal": true
+        }
+      ]
+    }
+  ]
+}

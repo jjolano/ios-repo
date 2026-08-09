@@ -18,6 +18,19 @@ fi
 dpkg-scanpackages --multiversion "$STAGE" > Packages
 sed -i "s|^Filename: $STAGE/|Filename: $BASE/|" Packages
 
+# Inject depiction fields for packages with a depictions/ios/<id>.{json,html} file.
+# Sileo reads SileoDepiction (JSON), Cydia reads Depiction (HTML).
+DEPIC_BASE="https://ios.jjolano.me/depictions/ios"
+for f in depictions/ios/*.json; do
+  [ -e "$f" ] || continue
+  id=$(basename "$f" .json)
+  awk -v id="$id" -v db="$DEPIC_BASE" '
+    $0 == "Package: " id { want=1 }
+    want && /^Description:/ { print; print "Depiction: " db "/" id ".html"; print "SileoDepiction: " db "/" id ".json"; want=0; next }
+    { print }
+  ' Packages > Packages.tmp && mv Packages.tmp Packages
+done
+
 cat Packages | xz > Packages.xz
 cat Packages | bzip2 > Packages.bz2
 cat Packages | gzip > Packages.gz

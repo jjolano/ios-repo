@@ -1,0 +1,30 @@
+{
+  "class": "DepictionTabView",
+  "tabs": [
+    {
+      "class": "DepictionStackView",
+      "tabname": "Details",
+      "views": [
+        {
+          "class": "DepictionHeaderView",
+          "title": "Shadow",
+          "subtitle": "me.jjolano.shadow"
+        },
+        {
+          "class": "DepictionMarkdownView",
+          "markdown": "A modern jailbreak detection bypass."
+        },
+        {
+          "class": "DepictionMarkdownView",
+          "markdown": "**Supported variants:** rootful (`iphoneos-arm`), rootless (`iphoneos-arm64`), roothide (`iphoneos-arm64e`)"
+        },
+        {
+          "class": "DepictionTableButtonView",
+          "title": "Source Code",
+          "action": "https://github.com/jjolano/Shadow",
+          "openExternal": true
+        }
+      ]
+    }
+  ]
+}
