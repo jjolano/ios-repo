@@ -90,5 +90,12 @@ apt-ftparchive\
 STAMP=$(date -u +%Y-%m-%dT%H:%M:%SZ)
 sed -i "s|\(>Last updated <span id=\"last-updated\">\)[^<]*\(</span>\)|\1$STAMP\2|" index.html
 
+# Only commit if something meaningful changed. Release always differs (fresh
+# Date/checksums), so only Packages* and index.html count as meaningful.
 git add Packages Packages.bz2 Packages.gz Packages.lzma Packages.xz Packages.zst Release update.sh index.html
-git diff --cached --quiet || { git commit -m "update repo"; git push; }
+if git diff --cached --quiet HEAD -- Packages Packages.bz2 Packages.gz Packages.lzma Packages.xz Packages.zst index.html; then
+  echo "no meaningful change; skipping commit"
+else
+  git commit -m "update repo"
+  git push
+fi
