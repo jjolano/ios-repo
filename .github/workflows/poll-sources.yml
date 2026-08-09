@@ -1,0 +1,26 @@
+name: poll sources
+on:
+  schedule:
+    - cron: '0 */6 * * *'   # every 6 hours
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  poll:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: release
+      - name: Install apt tools
+        run: sudo apt-get update && sudo apt-get install -y dpkg-dev zstd apt-utils
+      - name: Set git identity
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+      - name: Regenerate index from all source repos
+        run: ./update.sh
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
