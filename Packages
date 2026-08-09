@@ -734,6 +734,114 @@ Author: jjolano
 Name: HookKit Module (Cydia Substrate)
 
 Package: me.jjolano.shadow
+Version: 3.3.3
+Architecture: iphoneos-arm
+Maintainer: jjolano
+Installed-Size: 952
+Depends: firmware (>= 8.0), mobilesubstrate, preferenceloader, dpkg, com.opa334.altlist, com.opa334.libsandy, firmware (>= 11.0) | ws.hbang.common
+Filename: https://github.com/jjolano/Shadow/releases/download/v3.3.3/me.jjolano.shadow_3.3.3_iphoneos-arm.deb
+Size: 144068
+MD5sum: 6b23948d6a47465e1af0da6effbe7d9e
+SHA1: 5981700fb8f12a13dffadbf9ec16166f364cab98
+SHA256: 1ea2fbc7cbb56c7569e01b211fb42d1f32e6fa86902a6b6acb2f33f3eb21fa73
+Section: System
+Description: A modern jailbreak detection bypass for jailbroken iOS.
+Depiction: https://ios.jjolano.me/depictions/ios/me.jjolano.shadow.html
+SileoDepiction: https://ios.jjolano.me/depictions/ios/me.jjolano.shadow.json
+Author: jjolano
+Name: Shadow
+
+Package: me.jjolano.shadow
+Version: 3.3.4
+Architecture: iphoneos-arm
+Maintainer: jjolano
+Installed-Size: 952
+Depends: firmware (>= 8.0), mobilesubstrate, preferenceloader, dpkg, com.opa334.altlist, com.opa334.libsandy, firmware (>= 11.0) | ws.hbang.common
+Filename: https://github.com/jjolano/Shadow/releases/download/v3.3.4/me.jjolano.shadow_3.3.4_iphoneos-arm.deb
+Size: 144680
+MD5sum: a28e8f1ce64274c3c7ce9fdc0521e858
+SHA1: 355cf327b7116fc1f5a42383673747843dce1fa8
+SHA256: 35ad3bf92d4b616be13b1b521a8d659272647a3264c1bc0d5d27a7ed9a9cba22
+Section: System
+Description: A modern jailbreak detection bypass for jailbroken iOS.
+Depiction: https://ios.jjolano.me/depictions/ios/me.jjolano.shadow.html
+SileoDepiction: https://ios.jjolano.me/depictions/ios/me.jjolano.shadow.json
+Author: jjolano
+Name: Shadow
+
+Package: me.jjolano.shadow
+Version: 3.3.5
+Architecture: iphoneos-arm
+Maintainer: jjolano
+Installed-Size: 952
+Depends: firmware (>= 8.0), mobilesubstrate, preferenceloader, dpkg, com.opa334.altlist, com.opa334.libsandy, firmware (>= 11.0) | ws.hbang.common
+Filename: https://github.com/jjolano/Shadow/releases/download/v3.3.5/me.jjolano.shadow_3.3.5_iphoneos-arm.deb
+Size: 145098
+MD5sum: 9015f7113b78acd8f0eaeee3e8bf7eef
+SHA1: f086efd4150bb6b718f6de9c57f7ff4ce1689f77
+SHA256: c0718800298cefc0f9d38a1e770f44c729044aa7e5fe50198b83afd239819b55
+Section: System
+Description: A modern jailbreak detection bypass for jailbroken iOS.
+Depiction: https://ios.jjolano.me/depictions/ios/me.jjolano.shadow.html
+SileoDepiction: https://ios.jjolano.me/depictions/ios/me.jjolano.shadow.json
+Author: jjolano
+Name: Shadow
+
+Package: me.jjolano.shadow
+Version: 3.3.6
+Architecture: iphoneos-arm
+Maintainer: jjolano
+Installed-Size: 952
+Depends: firmware (>= 8.0), mobilesubstrate, preferenceloader, dpkg, com.opa334.altlist, com.opa334.libsandy, firmware (>= 11.0) | ws.hbang.common
+Filename: https://github.com/jjolano/Shadow/releases/download/v3.3.6/me.jjolano.shadow_3.3.6_iphoneos-arm.deb
+Size: 144296
+MD5sum: 063c8357f03aaa6d8d9ed4af69b9eb4e
+SHA1: 9ecd89a3321de8919841527bc9779374c0b83387
+SHA256: 875003178bade6f8c538e49e405622868739d0d391cb0acc830fc720185be906
+Section: System
+Description: A modern jailbreak detection bypass for jailbroken iOS.
+Depiction: https://ios.jjolano.me/depictions/ios/me.jjolano.shadow.html
+SileoDepiction: https://ios.jjolano.me/depictions/ios/me.jjolano.shadow.json
+Author: jjolano
+Name: Shadow
+
+Package: me.jjolano.shadow
+Version: 3.3.7
+Architecture: iphoneos-arm
+Maintainer: jjolano
+Installed-Size: 984
+Depends: firmware (>= 8.0), mobilesubstrate, preferenceloader, dpkg, com.opa334.altlist, com.opa334.libsandy, firmware (>= 11.0) | ws.hbang.common
+Filename: https://github.com/jjolano/Shadow/releases/download/v3.3.7/me.jjolano.shadow_3.3.7_iphoneos-arm.deb
+Size: 144960
+MD5sum: a4b78bd08874ca7d280374be153d6111
+SHA1: 99f24b6331b39c0a7b5049dc3822060a3c88b2e7
+SHA256: a4f309b8ff54838f9449daabfdb82f1dc7597e0b3cea9b3f85d796aecc486f32
+Section: System
+Description: A modern jailbreak detection bypass for jailbroken iOS.
+Depiction: https://ios.jjolano.me/depictions/ios/me.jjolano.shadow.html
+SileoDepiction: https://ios.jjolano.me/depictions/ios/me.jjolano.shadow.json
+Author: jjolano
+Name: Shadow
+
+Package: me.jjolano.shadow
+Version: 3.4
+Architecture: iphoneos-arm
+Maintainer: jjolano
+Installed-Size: 1260
+Depends: firmware (>= 8.0), mobilesubstrate, preferenceloader, dpkg, com.opa334.altlist, com.opa334.libsandy, firmware (>= 11.0) | ws.hbang.common
+Filename: https://github.com/jjolano/Shadow/releases/download/v3.4/me.jjolano.shadow_3.4_iphoneos-arm.deb
+Size: 165452
+MD5sum: c445bd36b4e448d7701317a6ccf36a8b
+SHA1: 136541e9665400b823d62f57feb66b155b7bcf48
+SHA256: 8f5fbc69d34968e7e6f425d49652553c4752dde56c88840ea01192086ad6c7d6
+Section: System
+Description: A modern jailbreak detection bypass for jailbroken iOS.
+Depiction: https://ios.jjolano.me/depictions/ios/me.jjolano.shadow.html
+SileoDepiction: https://ios.jjolano.me/depictions/ios/me.jjolano.shadow.json
+Author: jjolano
+Name: Shadow
+
+Package: me.jjolano.shadow
 Version: 3.4.1
 Architecture: iphoneos-arm
 Maintainer: jjolano
@@ -744,6 +852,156 @@ Size: 166596
 MD5sum: 42a47a2b90a27f37a88f1bee2e77b80e
 SHA1: 72b82413f0e7bf33a81481d9e61626e045c394c3
 SHA256: cc9bea35900d6a31427b3dc8ca18e8f1b30edc7ed508bc97b01e76fb20fbc48a
+Section: System
+Description: A modern jailbreak detection bypass for jailbroken iOS.
+Depiction: https://ios.jjolano.me/depictions/ios/me.jjolano.shadow.html
+SileoDepiction: https://ios.jjolano.me/depictions/ios/me.jjolano.shadow.json
+Author: jjolano
+Name: Shadow
+
+Package: me.jjolano.shadow
+Version: 3.4.1
+Architecture: iphoneos-arm
+Maintainer: jjolano
+Installed-Size: 1260
+Depends: firmware (>= 8.0), mobilesubstrate, preferenceloader, dpkg, com.opa334.altlist, com.opa334.libsandy, firmware (>= 11.0) | ws.hbang.common
+Filename: https://github.com/jjolano/Shadow/releases/download/v3.4.1/me.jjolano.shadow_3.4.1_iphoneos-arm.deb
+Size: 166596
+MD5sum: 42a47a2b90a27f37a88f1bee2e77b80e
+SHA1: 72b82413f0e7bf33a81481d9e61626e045c394c3
+SHA256: cc9bea35900d6a31427b3dc8ca18e8f1b30edc7ed508bc97b01e76fb20fbc48a
+Section: System
+Description: A modern jailbreak detection bypass for jailbroken iOS.
+Depiction: https://ios.jjolano.me/depictions/ios/me.jjolano.shadow.html
+SileoDepiction: https://ios.jjolano.me/depictions/ios/me.jjolano.shadow.json
+Author: jjolano
+Name: Shadow
+
+Package: me.jjolano.shadow
+Version: 3.5-1
+Architecture: iphoneos-arm
+Maintainer: jjolano
+Installed-Size: 1188
+Depends: firmware (>= 8.0), mobilesubstrate, preferenceloader, dpkg, com.opa334.altlist, com.opa334.libsandy, me.jjolano.fmwk.hookkit (>= 0.0.5)
+Suggests: com.ps.injectionfoundation
+Conflicts: me.jjolano.shadow.beta
+Replaces: me.jjolano.shadow.beta
+Provides: me.jjolano.shadow.beta
+Filename: https://github.com/jjolano/Shadow/releases/download/v3.5/me.jjolano.shadow_3.5-1_iphoneos-arm.deb
+Size: 158324
+MD5sum: 5f93bb10de7d55b115b65c4c98e0ccc7
+SHA1: b8fd97a523a2e43ae62feefa30aceef840e2ce86
+SHA256: 84863b066bd0bd8da4ab2214f077c833f2950c2222a0b6989234806ba89bafe2
+Section: System
+Description: A modern jailbreak detection bypass for jailbroken iOS.
+Depiction: https://ios.jjolano.me/depictions/ios/me.jjolano.shadow.html
+SileoDepiction: https://ios.jjolano.me/depictions/ios/me.jjolano.shadow.json
+Author: jjolano
+Name: Shadow
+
+Package: me.jjolano.shadow
+Version: 3.5.1
+Architecture: iphoneos-arm
+Maintainer: jjolano
+Installed-Size: 1208
+Depends: firmware (>= 8.0), mobilesubstrate, preferenceloader, dpkg, com.opa334.altlist, com.opa334.libsandy, me.jjolano.fmwk.hookkit (>= 0.0.5)
+Suggests: com.ps.injectionfoundation
+Conflicts: me.jjolano.shadow.beta
+Replaces: me.jjolano.shadow.beta
+Provides: me.jjolano.shadow.beta
+Filename: https://github.com/jjolano/Shadow/releases/download/v3.5.1/me.jjolano.shadow_3.5.1_iphoneos-arm.deb
+Size: 168886
+MD5sum: c0cfafe5ae0f7ff25ea6a1a64298bd85
+SHA1: 1f2867de99e9081b00032e00e554560c6ec80388
+SHA256: 803478e75ed8fef7aa3ea415683fcbf5db905b70316976e653ce70d50fee3dfe
+Section: System
+Description: A modern jailbreak detection bypass for jailbroken iOS.
+Depiction: https://ios.jjolano.me/depictions/ios/me.jjolano.shadow.html
+SileoDepiction: https://ios.jjolano.me/depictions/ios/me.jjolano.shadow.json
+Author: jjolano
+Name: Shadow
+
+Package: me.jjolano.shadow
+Version: 3.5.2
+Architecture: iphoneos-arm
+Maintainer: jjolano
+Installed-Size: 1208
+Depends: firmware (>= 8.0), mobilesubstrate, preferenceloader, dpkg, com.opa334.altlist, com.opa334.libsandy, me.jjolano.fmwk.hookkit (>= 0.0.5)
+Suggests: com.ps.injectionfoundation
+Conflicts: me.jjolano.shadow.beta
+Replaces: me.jjolano.shadow.beta
+Provides: me.jjolano.shadow.beta
+Filename: https://github.com/jjolano/Shadow/releases/download/v3.5.2/me.jjolano.shadow_3.5.2_iphoneos-arm.deb
+Size: 167672
+MD5sum: e525d2b92cdc44894e49a886f0c1853c
+SHA1: 5c7d1fdb9e120b3d53d051a388b096a52f68d142
+SHA256: 90a5e4140a5611ef33469078f6f1db39600ce5c8bc282eb07390289c9d66d724
+Section: System
+Description: A modern jailbreak detection bypass for jailbroken iOS.
+Depiction: https://ios.jjolano.me/depictions/ios/me.jjolano.shadow.html
+SileoDepiction: https://ios.jjolano.me/depictions/ios/me.jjolano.shadow.json
+Author: jjolano
+Name: Shadow
+
+Package: me.jjolano.shadow
+Version: 3.5.3
+Architecture: iphoneos-arm
+Maintainer: jjolano
+Installed-Size: 1208
+Depends: firmware (>= 8.0), mobilesubstrate, preferenceloader, dpkg, com.opa334.altlist, com.opa334.libsandy, me.jjolano.fmwk.hookkit (>= 0.1)
+Suggests: com.ps.injectionfoundation
+Conflicts: me.jjolano.shadow.beta
+Replaces: me.jjolano.shadow.beta
+Provides: me.jjolano.shadow.beta
+Filename: https://github.com/jjolano/Shadow/releases/download/v3.5.3/me.jjolano.shadow_3.5.3_iphoneos-arm.deb
+Size: 168094
+MD5sum: 3d594b19d41a219737be0f79b4b9bc1a
+SHA1: 632b8175779f69ecb96e1599ee72eeffe79aede0
+SHA256: 26baf41aa8ecb1785a72e4592fbbd9f37ba67218b8d654f9c0e65afee7328a58
+Section: System
+Description: A modern jailbreak detection bypass for jailbroken iOS.
+Depiction: https://ios.jjolano.me/depictions/ios/me.jjolano.shadow.html
+SileoDepiction: https://ios.jjolano.me/depictions/ios/me.jjolano.shadow.json
+Author: jjolano
+Name: Shadow
+
+Package: me.jjolano.shadow
+Version: 3.5.4-2
+Architecture: iphoneos-arm
+Maintainer: jjolano
+Installed-Size: 1244
+Depends: firmware (>= 8.0), mobilesubstrate, preferenceloader, dpkg, com.opa334.altlist, com.opa334.libsandy, me.jjolano.fmwk.hookkit (>= 0.1)
+Suggests: com.ps.injectionfoundation
+Conflicts: me.jjolano.shadow.beta
+Replaces: me.jjolano.shadow.beta
+Provides: me.jjolano.shadow.beta
+Filename: https://github.com/jjolano/Shadow/releases/download/v3.5.4/me.jjolano.shadow_3.5.4-2_iphoneos-arm.deb
+Size: 171234
+MD5sum: 5187e0d7375632517ab9218afd85c44b
+SHA1: 1f1569998d29e770e26d1dc679f080033242f093
+SHA256: 90e3c72061b1f22d2709a72cd596889d89d322044ebe3043383b131d1b185653
+Section: System
+Description: A modern jailbreak detection bypass for jailbroken iOS.
+Depiction: https://ios.jjolano.me/depictions/ios/me.jjolano.shadow.html
+SileoDepiction: https://ios.jjolano.me/depictions/ios/me.jjolano.shadow.json
+Author: jjolano
+Name: Shadow
+
+Package: me.jjolano.shadow
+Version: 3.5.5
+Architecture: iphoneos-arm
+Maintainer: jjolano
+Installed-Size: 1244
+Depends: firmware (>= 8.0), mobilesubstrate, preferenceloader, dpkg, com.opa334.altlist, com.opa334.libsandy, me.jjolano.fmwk.hookkit (>= 0.1.5)
+Suggests: com.ps.injectionfoundation
+Conflicts: me.jjolano.shadow.beta
+Replaces: me.jjolano.shadow.beta
+Provides: me.jjolano.shadow.beta
+Filename: https://github.com/jjolano/Shadow/releases/download/v3.5.5/me.jjolano.shadow_3.5.5_iphoneos-arm.deb
+Size: 170902
+MD5sum: 32ac00bc9ede3c9f0c9c2689ba422b55
+SHA1: 53a7acac31370a275c47fb95a935bdde358792e0
+SHA256: 58fc9b578a8801503bf34b7a9c287df0b51f6ce1d12dc4c789be0e8fffb4f470
 Section: System
 Description: A modern jailbreak detection bypass for jailbroken iOS.
 Depiction: https://ios.jjolano.me/depictions/ios/me.jjolano.shadow.html
@@ -774,6 +1032,72 @@ Author: jjolano
 Name: Shadow
 
 Package: me.jjolano.shadow
+Version: 3.5.6
+Architecture: iphoneos-arm
+Maintainer: jjolano
+Installed-Size: 1244
+Depends: firmware (>= 8.0), mobilesubstrate, preferenceloader, dpkg, com.opa334.altlist, com.opa334.libsandy, me.jjolano.fmwk.hookkit (>= 0.1.5)
+Suggests: com.ps.injectionfoundation
+Conflicts: me.jjolano.shadow.beta
+Replaces: me.jjolano.shadow.beta
+Provides: me.jjolano.shadow.beta
+Filename: https://github.com/jjolano/Shadow/releases/download/v3.5.6/me.jjolano.shadow_3.5.6_iphoneos-arm.deb
+Size: 171254
+MD5sum: b102dd9cc5f4ef18a1c36b661800b417
+SHA1: 39699adb8b268ec7feec172b1abfa177bf25d7c3
+SHA256: 186cb1a1bd379a1218924dc92a4a0b10a6a5d383bf277a3ebe406938e19f0da5
+Section: System
+Description: A modern jailbreak detection bypass for jailbroken iOS.
+Depiction: https://ios.jjolano.me/depictions/ios/me.jjolano.shadow.html
+SileoDepiction: https://ios.jjolano.me/depictions/ios/me.jjolano.shadow.json
+Author: jjolano
+Name: Shadow
+
+Package: me.jjolano.shadow
+Version: 3.5.6-4+debug
+Architecture: iphoneos-arm
+Maintainer: jjolano
+Installed-Size: 2080
+Depends: firmware (>= 8.0), mobilesubstrate, preferenceloader, dpkg, com.opa334.altlist, com.opa334.libsandy, me.jjolano.fmwk.hookkit (>= 0.1.5)
+Suggests: com.ps.injectionfoundation
+Conflicts: me.jjolano.shadow.beta
+Replaces: me.jjolano.shadow.beta
+Provides: me.jjolano.shadow.beta
+Filename: https://github.com/jjolano/Shadow/releases/download/v3.5.6/me.jjolano.shadow_3.5.6-4+debug_iphoneos-arm.deb
+Size: 2033868
+MD5sum: ac79655ba8e8aaf92b6fe6e481fff3bc
+SHA1: c2db2dc44597da1fdad2746cd25d2b6d760c1478
+SHA256: eba21e8d92d42cfe096f94191504fecee4312fd1a139af9664144c115cb56407
+Section: System
+Description: A modern jailbreak detection bypass for jailbroken iOS.
+Depiction: https://ios.jjolano.me/depictions/ios/me.jjolano.shadow.html
+SileoDepiction: https://ios.jjolano.me/depictions/ios/me.jjolano.shadow.json
+Author: jjolano
+Name: Shadow
+
+Package: me.jjolano.shadow
+Version: 3.6.0
+Architecture: iphoneos-arm
+Maintainer: jjolano
+Installed-Size: 1212
+Depends: firmware (>= 8.0), mobilesubstrate, dpkg, com.opa334.altlist, com.opa334.libsandy, me.jjolano.fmwk.hookkit (>= 0.1.5)
+Recommends: preferenceloader
+Conflicts: me.jjolano.shadow.beta
+Replaces: me.jjolano.shadow.beta
+Provides: me.jjolano.shadow.beta
+Filename: https://github.com/jjolano/Shadow/releases/download/v3.6.0/me.jjolano.shadow_3.6.0_iphoneos-arm.deb
+Size: 167886
+MD5sum: a19c1432ce47a3a9ee21446507eed8aa
+SHA1: b6c29fde6f533b6e7f6316fe85916e636b0d3cd3
+SHA256: 6b7e445751e25caaecc50fc3b2565c0fad34c565c0b0d9471f7ac90fa70db7f3
+Section: System
+Description: A modern jailbreak detection bypass for jailbroken iOS.
+Depiction: https://ios.jjolano.me/depictions/ios/me.jjolano.shadow.html
+SileoDepiction: https://ios.jjolano.me/depictions/ios/me.jjolano.shadow.json
+Author: jjolano
+Name: Shadow
+
+Package: me.jjolano.shadow
 Version: 3.6.1
 Architecture: iphoneos-arm
 Maintainer: jjolano
@@ -788,6 +1112,163 @@ Size: 153378
 MD5sum: 6827e27d61d9ad8a49a58ec9ae2a8e64
 SHA1: aa7ffbbe7c8c3f5aa7bd8b0300a89295093e726a
 SHA256: d570985593c4beeac7dd046769d1a3107fe11b59102ca3a758684e9aea0a21f0
+Section: System
+Description: A modern jailbreak detection bypass for jailbroken iOS.
+Depiction: https://ios.jjolano.me/depictions/ios/me.jjolano.shadow.html
+SileoDepiction: https://ios.jjolano.me/depictions/ios/me.jjolano.shadow.json
+Author: jjolano
+Name: Shadow
+
+Package: me.jjolano.shadow
+Version: 3.6.1
+Architecture: iphoneos-arm
+Maintainer: jjolano
+Installed-Size: 1380
+Depends: firmware (>= 8.0), mobilesubstrate, dpkg, com.opa334.altlist, com.opa334.libsandy, me.jjolano.fmwk.hookkit (>= 0.1.5)
+Recommends: preferenceloader
+Conflicts: me.jjolano.shadow.beta
+Replaces: me.jjolano.shadow.beta
+Provides: me.jjolano.shadow.beta
+Filename: https://github.com/jjolano/Shadow/releases/download/v3.6.1/me.jjolano.shadow_3.6.1_iphoneos-arm.deb
+Size: 153378
+MD5sum: 6827e27d61d9ad8a49a58ec9ae2a8e64
+SHA1: aa7ffbbe7c8c3f5aa7bd8b0300a89295093e726a
+SHA256: d570985593c4beeac7dd046769d1a3107fe11b59102ca3a758684e9aea0a21f0
+Section: System
+Description: A modern jailbreak detection bypass for jailbroken iOS.
+Depiction: https://ios.jjolano.me/depictions/ios/me.jjolano.shadow.html
+SileoDepiction: https://ios.jjolano.me/depictions/ios/me.jjolano.shadow.json
+Author: jjolano
+Name: Shadow
+
+Package: me.jjolano.shadow
+Version: 3.6.2
+Architecture: iphoneos-arm
+Maintainer: jjolano
+Installed-Size: 1352
+Depends: firmware (>= 8.0), mobilesubstrate, dpkg, com.opa334.altlist, com.opa334.libsandy, me.jjolano.fmwk.hookkit (>= 0.1.5)
+Recommends: preferenceloader, com.ps.injectionfoundation
+Conflicts: me.jjolano.shadow.beta
+Replaces: me.jjolano.shadow.beta
+Provides: me.jjolano.shadow.beta
+Filename: https://github.com/jjolano/Shadow/releases/download/v3.6.2/me.jjolano.shadow_3.6.2_iphoneos-arm.deb
+Size: 146916
+MD5sum: c18356f2ca778b52d304f19d3c744961
+SHA1: 9dc010531306904be016b097430864cb33da51e8
+SHA256: 69dafa08f4037a8de36356910425f49795a04c09712a7f1a1bb32cd75ba0cce8
+Section: System
+Description: A modern jailbreak detection bypass for jailbroken iOS.
+Depiction: https://ios.jjolano.me/depictions/ios/me.jjolano.shadow.html
+SileoDepiction: https://ios.jjolano.me/depictions/ios/me.jjolano.shadow.json
+Author: jjolano
+Name: Shadow
+
+Package: me.jjolano.shadow
+Version: 3.6.3
+Architecture: iphoneos-arm
+Maintainer: jjolano
+Installed-Size: 1348
+Depends: firmware (>= 8.0), mobilesubstrate, dpkg, com.opa334.altlist, com.opa334.libsandy, me.jjolano.fmwk.hookkit (>= 0.1.5)
+Recommends: preferenceloader, com.ps.injectionfoundation
+Conflicts: me.jjolano.shadow.beta
+Replaces: me.jjolano.shadow.beta
+Provides: me.jjolano.shadow.beta
+Filename: https://github.com/jjolano/Shadow/releases/download/v3.6.3/me.jjolano.shadow_3.6.3_iphoneos-arm.deb
+Size: 146832
+MD5sum: 11e53fde9c8b294e9a64bfd07b85e723
+SHA1: 9fe28caec3aa10ec89b49c244ce224659b4b81d8
+SHA256: 0699643beac7327cfb5d04ad8da90db774ae37517782380d15c47413f02d6005
+Section: System
+Description: A modern jailbreak detection bypass for jailbroken iOS.
+Depiction: https://ios.jjolano.me/depictions/ios/me.jjolano.shadow.html
+SileoDepiction: https://ios.jjolano.me/depictions/ios/me.jjolano.shadow.json
+Author: jjolano
+Name: Shadow
+
+Package: me.jjolano.shadow
+Version: 3.6.4
+Architecture: iphoneos-arm
+Maintainer: jjolano
+Installed-Size: 1348
+Depends: firmware (>= 8.0), mobilesubstrate, dpkg, com.opa334.altlist, com.opa334.libsandy, me.jjolano.fmwk.hookkit (>= 0.1.5)
+Recommends: preferenceloader, com.ps.injectionfoundation
+Conflicts: me.jjolano.shadow.beta
+Replaces: me.jjolano.shadow.beta
+Provides: me.jjolano.shadow.beta
+Filename: https://github.com/jjolano/Shadow/releases/download/v3.6.4/me.jjolano.shadow_3.6.4_iphoneos-arm.deb
+Size: 146372
+MD5sum: ac6acc217ff6ba311768504ca7302989
+SHA1: 59e4cca325aa045fba7b0a303645d0f8bcf0a3ae
+SHA256: bc58d5153f05184c8051ca952b26a9b1ee5eb4359927027721187bef99e0929a
+Section: System
+Description: A modern jailbreak detection bypass for jailbroken iOS.
+Depiction: https://ios.jjolano.me/depictions/ios/me.jjolano.shadow.html
+SileoDepiction: https://ios.jjolano.me/depictions/ios/me.jjolano.shadow.json
+Author: jjolano
+Name: Shadow
+
+Package: me.jjolano.shadow
+Version: 3.6.5
+Architecture: iphoneos-arm
+Maintainer: jjolano
+Installed-Size: 1364
+Depends: firmware (>= 8.0), mobilesubstrate, dpkg, com.opa334.altlist, com.opa334.libsandy, me.jjolano.fmwk.hookkit (>= 0.1.5)
+Recommends: preferenceloader
+Suggests: com.ps.injectionfoundation
+Conflicts: me.jjolano.shadow.beta
+Replaces: me.jjolano.shadow.beta
+Provides: me.jjolano.shadow.beta
+Filename: https://github.com/jjolano/Shadow/releases/download/v3.6.5/me.jjolano.shadow_3.6.5_iphoneos-arm.deb
+Size: 148810
+MD5sum: bd9d6dfa9c36b3045eb2b7f4bf1faab9
+SHA1: 72bff891ba1dc75d0af55f71993d1ef3d59c6016
+SHA256: 55a780ae3878114f0d777e3d9d4d0a9f6dc8db7dd8415aca72ba1c2120a58d2b
+Section: System
+Description: A modern jailbreak detection bypass for jailbroken iOS.
+Depiction: https://ios.jjolano.me/depictions/ios/me.jjolano.shadow.html
+SileoDepiction: https://ios.jjolano.me/depictions/ios/me.jjolano.shadow.json
+Author: jjolano
+Name: Shadow
+
+Package: me.jjolano.shadow
+Version: 3.6.6
+Architecture: iphoneos-arm
+Maintainer: jjolano
+Installed-Size: 1364
+Depends: firmware (>= 8.0), mobilesubstrate, dpkg, com.opa334.altlist, com.opa334.libsandy, me.jjolano.fmwk.hookkit (>= 0.1.5)
+Recommends: preferenceloader
+Suggests: com.ps.injectionfoundation
+Conflicts: me.jjolano.shadow.beta
+Replaces: me.jjolano.shadow.beta
+Provides: me.jjolano.shadow.beta
+Filename: https://github.com/jjolano/Shadow/releases/download/v3.6.6/me.jjolano.shadow_3.6.6_iphoneos-arm.deb
+Size: 148760
+MD5sum: f2ac1f05d82dbe3c058362a593bf0361
+SHA1: 2ad80add0a66fd8259b4a81b634cb8cce53f3d80
+SHA256: 1215fe8e862285c61ef001eb5e5e903ca26ba67f12de4c5d26083fe442de6a24
+Section: System
+Description: A modern jailbreak detection bypass for jailbroken iOS.
+Depiction: https://ios.jjolano.me/depictions/ios/me.jjolano.shadow.html
+SileoDepiction: https://ios.jjolano.me/depictions/ios/me.jjolano.shadow.json
+Author: jjolano
+Name: Shadow
+
+Package: me.jjolano.shadow
+Version: 3.6.7
+Architecture: iphoneos-arm
+Maintainer: jjolano
+Installed-Size: 1360
+Depends: firmware (>= 8.0), mobilesubstrate, dpkg, com.opa334.altlist, com.opa334.libsandy, me.jjolano.fmwk.hookkit (>= 0.1.5)
+Recommends: preferenceloader
+Suggests: com.ps.injectionfoundation
+Conflicts: me.jjolano.shadow.beta
+Replaces: me.jjolano.shadow.beta
+Provides: me.jjolano.shadow.beta
+Filename: https://github.com/jjolano/Shadow/releases/download/v3.6.7/me.jjolano.shadow_3.6.7_iphoneos-arm.deb
+Size: 148996
+MD5sum: d758e31c5f8bfc4673d98cf06a5d5f0a
+SHA1: 2c5dddfb073c8d106c30eb0ead739c64eb503dbe
+SHA256: c64f891125c2368101fcfd5929ac14358cd01e0be4f0471a290a6586bc3efbbd
 Section: System
 Description: A modern jailbreak detection bypass for jailbroken iOS.
 Depiction: https://ios.jjolano.me/depictions/ios/me.jjolano.shadow.html
@@ -819,6 +1300,29 @@ Author: jjolano
 Name: Shadow
 
 Package: me.jjolano.shadow
+Version: 3.6.8
+Architecture: iphoneos-arm
+Maintainer: jjolano
+Installed-Size: 1400
+Depends: firmware (>= 8.0), mobilesubstrate, dpkg, com.opa334.altlist, com.opa334.libsandy, me.jjolano.fmwk.hookkit (>= 0.1.5)
+Recommends: preferenceloader
+Suggests: com.ps.injectionfoundation
+Conflicts: me.jjolano.shadow.beta
+Replaces: me.jjolano.shadow.beta
+Provides: me.jjolano.shadow.beta
+Filename: https://github.com/jjolano/Shadow/releases/download/v3.6.8/me.jjolano.shadow_3.6.8_iphoneos-arm.deb
+Size: 153554
+MD5sum: af2db3fc1dace4a7eb5ccb88791c07f1
+SHA1: e85feb5c3a1819321eecb9b044bd2b12da974a83
+SHA256: 19f34d3f8497ca5cb9745045233ac3fac67f5959e29dd9a24af6a2488dbdc8ef
+Section: System
+Description: A modern jailbreak detection bypass for jailbroken iOS.
+Depiction: https://ios.jjolano.me/depictions/ios/me.jjolano.shadow.html
+SileoDepiction: https://ios.jjolano.me/depictions/ios/me.jjolano.shadow.json
+Author: jjolano
+Name: Shadow
+
+Package: me.jjolano.shadow
 Version: 3.6.9-2
 Architecture: iphoneos-arm
 Maintainer: jjolano
@@ -836,6 +1340,125 @@ SHA1: af0129ab0db9c4722cebebcd464f34fa613e909d
 SHA256: 267fa2a5257b4c92cbb92032fef4618afd0bc4154ebcadba8c4c4b217b7891d2
 Section: System
 Description: A modern jailbreak detection bypass for jailbroken iOS.
+Depiction: https://ios.jjolano.me/depictions/ios/me.jjolano.shadow.html
+SileoDepiction: https://ios.jjolano.me/depictions/ios/me.jjolano.shadow.json
+Author: jjolano
+Name: Shadow
+
+Package: me.jjolano.shadow
+Version: 3.6.9-2
+Architecture: iphoneos-arm
+Maintainer: jjolano
+Installed-Size: 1400
+Depends: firmware (>= 8.0), mobilesubstrate, dpkg, com.opa334.altlist, com.opa334.libsandy, me.jjolano.fmwk.hookkit (>= 0.1.5), me.jjolano.fmwk.hookkit (<< 2.0.0), me.jjolano.hkmodule.substrate
+Recommends: preferenceloader, me.jjolano.hkmodule.fishhook
+Suggests: com.ps.injectionfoundation
+Conflicts: me.jjolano.shadow.beta
+Replaces: me.jjolano.shadow.beta
+Provides: me.jjolano.shadow.beta
+Filename: https://github.com/jjolano/Shadow/releases/download/v3.6.9/me.jjolano.shadow_3.6.9-2_iphoneos-arm.deb
+Size: 153624
+MD5sum: 2f86ef6e53dabbec95b65d09ee1c2164
+SHA1: af0129ab0db9c4722cebebcd464f34fa613e909d
+SHA256: 267fa2a5257b4c92cbb92032fef4618afd0bc4154ebcadba8c4c4b217b7891d2
+Section: System
+Description: A modern jailbreak detection bypass for jailbroken iOS.
+Depiction: https://ios.jjolano.me/depictions/ios/me.jjolano.shadow.html
+SileoDepiction: https://ios.jjolano.me/depictions/ios/me.jjolano.shadow.json
+Author: jjolano
+Name: Shadow
+
+Package: me.jjolano.shadow
+Version: 3.7.1
+Architecture: iphoneos-arm
+Maintainer: jjolano
+Installed-Size: 1432
+Pre-Depends: dpkg
+Depends: firmware (>= 8.0), mobilesubstrate, com.opa334.altlist, com.opa334.libsandy, me.jjolano.fmwk.hookkit, me.jjolano.hkmodule.substrate
+Recommends: preferenceloader, me.jjolano.hkmodule.fishhook
+Suggests: com.ps.injectionfoundation
+Conflicts: me.jjolano.shadow.beta
+Replaces: me.jjolano.shadow.beta
+Provides: me.jjolano.shadow.beta
+Filename: https://github.com/jjolano/Shadow/releases/download/v3.7.1/me.jjolano.shadow_3.7.1_iphoneos-arm.deb
+Size: 164462
+MD5sum: 8751a160c23c76955cabeee2cbf439f0
+SHA1: 0235fba0d6cbc633d234e7b9025d96cdc231cbaa
+SHA256: 5f96e6fc1f251f1d320d27d4e6adb08e7c848afee9f469986afcab3634e7362e
+Section: System
+Description: A modern jailbreak detection bypass.
+Depiction: https://ios.jjolano.me/depictions/ios/me.jjolano.shadow.html
+SileoDepiction: https://ios.jjolano.me/depictions/ios/me.jjolano.shadow.json
+Author: jjolano
+Name: Shadow
+
+Package: me.jjolano.shadow
+Version: 3.7.1
+Architecture: iphoneos-arm64
+Maintainer: jjolano
+Installed-Size: 1080
+Pre-Depends: dpkg
+Depends: firmware (>= 8.0), mobilesubstrate, com.opa334.altlist, com.opa334.libsandy, me.jjolano.fmwk.hookkit, me.jjolano.hkmodule.substrate
+Recommends: preferenceloader, me.jjolano.hkmodule.fishhook
+Suggests: com.ps.injectionfoundation
+Conflicts: me.jjolano.shadow.beta
+Replaces: me.jjolano.shadow.beta
+Provides: me.jjolano.shadow.beta
+Filename: https://github.com/jjolano/Shadow/releases/download/v3.7.1/me.jjolano.shadow_3.7.1_iphoneos-arm64.deb
+Size: 103512
+MD5sum: 28a5821f3ee7661227372a3632ae8b63
+SHA1: b4f8e7d5df6988118e53f3391786c80c28894e01
+SHA256: f3818116af8527fb94f2780b9a1ed147b2e5c06d57b3c695dcde6ecc4d89611e
+Section: System
+Description: A modern jailbreak detection bypass.
+Depiction: https://ios.jjolano.me/depictions/ios/me.jjolano.shadow.html
+SileoDepiction: https://ios.jjolano.me/depictions/ios/me.jjolano.shadow.json
+Author: jjolano
+Name: Shadow
+
+Package: me.jjolano.shadow
+Version: 3.7.2
+Architecture: iphoneos-arm64
+Maintainer: jjolano
+Installed-Size: 1080
+Pre-Depends: dpkg
+Depends: firmware (>= 8.0), com.opa334.altlist, com.opa334.libsandy, me.jjolano.fmwk.hookkit, me.jjolano.hkmodule.substrate, me.jjolano.fmwk.rootbridge
+Recommends: mobilesubstrate, preferenceloader, me.jjolano.hkmodule.fishhook
+Suggests: com.ps.injectionfoundation
+Conflicts: me.jjolano.shadow.beta, me.jjolano.shadow.legacy
+Replaces: me.jjolano.shadow.beta
+Provides: me.jjolano.shadow.beta
+Filename: https://github.com/jjolano/Shadow/releases/download/v3.7.2/me.jjolano.shadow_3.7.2_iphoneos-arm64.deb
+Size: 103042
+MD5sum: 36eee5e8e407e6f766066635a992c5d1
+SHA1: 568ca860887a600a201d00ddd827dba93a829622
+SHA256: a72a22f5078ed1cefd02efbeaf39647dd30762dbcd9c1e681ec002487c877355
+Section: System
+Description: A modern jailbreak detection bypass.
+Depiction: https://ios.jjolano.me/depictions/ios/me.jjolano.shadow.html
+SileoDepiction: https://ios.jjolano.me/depictions/ios/me.jjolano.shadow.json
+Author: jjolano
+Name: Shadow
+
+Package: me.jjolano.shadow
+Version: 3.7.2
+Architecture: iphoneos-arm
+Maintainer: jjolano
+Installed-Size: 1432
+Pre-Depends: dpkg
+Depends: firmware (>= 8.0), com.opa334.altlist, com.opa334.libsandy, me.jjolano.fmwk.hookkit, me.jjolano.hkmodule.substrate, me.jjolano.fmwk.rootbridge
+Recommends: mobilesubstrate, preferenceloader, me.jjolano.hkmodule.fishhook
+Suggests: com.ps.injectionfoundation
+Conflicts: me.jjolano.shadow.beta, me.jjolano.shadow.legacy
+Replaces: me.jjolano.shadow.beta
+Provides: me.jjolano.shadow.beta
+Filename: https://github.com/jjolano/Shadow/releases/download/v3.7.2/me.jjolano.shadow_3.7.2_iphoneos-arm.deb
+Size: 163304
+MD5sum: b1d4c30b9e0d54d444ba78d8e9fec142
+SHA1: cc8c9bfbc56285e1c3a5383fbad0226647570d0d
+SHA256: 16ea2aa9b430e503ce870ce6fd10c58a60241d5c1f4e29548b1bc557591b2ba8
+Section: System
+Description: A modern jailbreak detection bypass.
 Depiction: https://ios.jjolano.me/depictions/ios/me.jjolano.shadow.html
 SileoDepiction: https://ios.jjolano.me/depictions/ios/me.jjolano.shadow.json
 Author: jjolano
@@ -882,6 +1505,102 @@ Size: 163278
 MD5sum: 195e183b34b67aa4d0cc26c9cb052d00
 SHA1: 0a64c75dda632ebd39b0af6dcce1607545b31e21
 SHA256: d6b7b4196cc6bdd722d8f72101d7eaf07d8c4b94a91284bfa2ee9b8b03887cda
+Section: System
+Description: A modern jailbreak detection bypass.
+Depiction: https://ios.jjolano.me/depictions/ios/me.jjolano.shadow.html
+SileoDepiction: https://ios.jjolano.me/depictions/ios/me.jjolano.shadow.json
+Author: jjolano
+Name: Shadow
+
+Package: me.jjolano.shadow
+Version: 3.7.3
+Architecture: iphoneos-arm64
+Maintainer: jjolano
+Installed-Size: 1080
+Pre-Depends: dpkg
+Depends: firmware (>= 8.0), com.opa334.altlist, com.opa334.libsandy, me.jjolano.fmwk.hookkit, me.jjolano.hkmodule.substrate, me.jjolano.fmwk.rootbridge
+Recommends: mobilesubstrate, preferenceloader, me.jjolano.hkmodule.fishhook
+Suggests: com.ps.injectionfoundation
+Conflicts: me.jjolano.shadow.beta, me.jjolano.shadow.legacy
+Replaces: me.jjolano.shadow.beta
+Provides: me.jjolano.shadow.beta
+Filename: https://github.com/jjolano/Shadow/releases/download/v3.7.3/me.jjolano.shadow_3.7.3_iphoneos-arm64.deb
+Size: 100512
+MD5sum: 925d59b93fd7f43cb560f8488f0e1ce3
+SHA1: 233f7ae96806d63e41587570f77463783ff2039c
+SHA256: d41e794ec0d6afa0952f2e5cf663b2f1ab371808fccfd9813c7e6d158aead347
+Section: System
+Description: A modern jailbreak detection bypass.
+Depiction: https://ios.jjolano.me/depictions/ios/me.jjolano.shadow.html
+SileoDepiction: https://ios.jjolano.me/depictions/ios/me.jjolano.shadow.json
+Author: jjolano
+Name: Shadow
+
+Package: me.jjolano.shadow
+Version: 3.7.3
+Architecture: iphoneos-arm
+Maintainer: jjolano
+Installed-Size: 1432
+Pre-Depends: dpkg
+Depends: firmware (>= 8.0), com.opa334.altlist, com.opa334.libsandy, me.jjolano.fmwk.hookkit, me.jjolano.hkmodule.substrate, me.jjolano.fmwk.rootbridge
+Recommends: mobilesubstrate, preferenceloader, me.jjolano.hkmodule.fishhook
+Suggests: com.ps.injectionfoundation
+Conflicts: me.jjolano.shadow.beta, me.jjolano.shadow.legacy
+Replaces: me.jjolano.shadow.beta
+Provides: me.jjolano.shadow.beta
+Filename: https://github.com/jjolano/Shadow/releases/download/v3.7.3/me.jjolano.shadow_3.7.3_iphoneos-arm.deb
+Size: 163278
+MD5sum: 195e183b34b67aa4d0cc26c9cb052d00
+SHA1: 0a64c75dda632ebd39b0af6dcce1607545b31e21
+SHA256: d6b7b4196cc6bdd722d8f72101d7eaf07d8c4b94a91284bfa2ee9b8b03887cda
+Section: System
+Description: A modern jailbreak detection bypass.
+Depiction: https://ios.jjolano.me/depictions/ios/me.jjolano.shadow.html
+SileoDepiction: https://ios.jjolano.me/depictions/ios/me.jjolano.shadow.json
+Author: jjolano
+Name: Shadow
+
+Package: me.jjolano.shadow
+Version: 3.7.4
+Architecture: iphoneos-arm64
+Maintainer: jjolano
+Installed-Size: 1080
+Pre-Depends: dpkg
+Depends: firmware (>= 8.0), com.opa334.altlist, com.opa334.libsandy, me.jjolano.fmwk.hookkit, me.jjolano.hkmodule.substrate, me.jjolano.fmwk.rootbridge
+Recommends: mobilesubstrate, preferenceloader, me.jjolano.hkmodule.fishhook
+Suggests: com.ps.injectionfoundation
+Conflicts: me.jjolano.shadow.beta, me.jjolano.shadow.legacy
+Replaces: me.jjolano.shadow.beta
+Provides: me.jjolano.shadow.beta
+Filename: https://github.com/jjolano/Shadow/releases/download/v3.7.4/me.jjolano.shadow_3.7.4_iphoneos-arm64.deb
+Size: 100770
+MD5sum: f3acf75b04b369139e6624622be148fc
+SHA1: b51898bf8f47f64cddfadc5f5710b051b2ab424a
+SHA256: af191e8d9191ffe649b88071ed49ffd57ec8f9cbef97ae3b28a8466928161b4f
+Section: System
+Description: A modern jailbreak detection bypass.
+Depiction: https://ios.jjolano.me/depictions/ios/me.jjolano.shadow.html
+SileoDepiction: https://ios.jjolano.me/depictions/ios/me.jjolano.shadow.json
+Author: jjolano
+Name: Shadow
+
+Package: me.jjolano.shadow
+Version: 3.7.4
+Architecture: iphoneos-arm
+Maintainer: jjolano
+Installed-Size: 1432
+Pre-Depends: dpkg
+Depends: firmware (>= 8.0), com.opa334.altlist, com.opa334.libsandy, me.jjolano.fmwk.hookkit, me.jjolano.hkmodule.substrate, me.jjolano.fmwk.rootbridge
+Recommends: mobilesubstrate, preferenceloader, me.jjolano.hkmodule.fishhook
+Suggests: com.ps.injectionfoundation
+Conflicts: me.jjolano.shadow.beta, me.jjolano.shadow.legacy
+Replaces: me.jjolano.shadow.beta
+Provides: me.jjolano.shadow.beta
+Filename: https://github.com/jjolano/Shadow/releases/download/v3.7.4/me.jjolano.shadow_3.7.4_iphoneos-arm.deb
+Size: 165118
+MD5sum: 51436940c4669be4bdcdb5f8f743b014
+SHA1: f198bc63f33f4b832aac7e0e801f2f16c82146ac
+SHA256: 78740e0843efca9edd2a08385313ed190bac9cd6b7845d6e5537299da1bbba80
 Section: System
 Description: A modern jailbreak detection bypass.
 Depiction: https://ios.jjolano.me/depictions/ios/me.jjolano.shadow.html
@@ -938,6 +1657,54 @@ Author: jjolano
 Name: Shadow
 
 Package: me.jjolano.shadow
+Version: 3.7.5
+Architecture: iphoneos-arm
+Maintainer: jjolano
+Installed-Size: 1432
+Pre-Depends: dpkg
+Depends: firmware (>= 8.0), com.opa334.altlist, com.opa334.libsandy, me.jjolano.fmwk.hookkit, me.jjolano.hkmodule.substrate, me.jjolano.fmwk.rootbridge
+Recommends: mobilesubstrate, preferenceloader, me.jjolano.hkmodule.fishhook
+Suggests: com.ps.injectionfoundation
+Conflicts: me.jjolano.shadow.beta, me.jjolano.shadow.legacy
+Replaces: me.jjolano.shadow.beta
+Provides: me.jjolano.shadow.beta
+Filename: https://github.com/jjolano/Shadow/releases/download/v3.7.5/me.jjolano.shadow_3.7.5_iphoneos-arm.deb
+Size: 165076
+MD5sum: 312672c272706c65b7501f966523e6c8
+SHA1: ceeb3d5f62657c41cb9c84be8e9af8fec401a9af
+SHA256: df2e8746830196433ea7641f2fa3840e9bc652d8d9c6bb320284e1c429d5dcd5
+Section: System
+Description: A modern jailbreak detection bypass.
+Depiction: https://ios.jjolano.me/depictions/ios/me.jjolano.shadow.html
+SileoDepiction: https://ios.jjolano.me/depictions/ios/me.jjolano.shadow.json
+Author: jjolano
+Name: Shadow
+
+Package: me.jjolano.shadow
+Version: 3.7.5
+Architecture: iphoneos-arm64
+Maintainer: jjolano
+Installed-Size: 1080
+Pre-Depends: dpkg
+Depends: firmware (>= 8.0), com.opa334.altlist, com.opa334.libsandy, me.jjolano.fmwk.hookkit, me.jjolano.hkmodule.substrate, me.jjolano.fmwk.rootbridge
+Recommends: mobilesubstrate, preferenceloader, me.jjolano.hkmodule.fishhook
+Suggests: com.ps.injectionfoundation
+Conflicts: me.jjolano.shadow.beta, me.jjolano.shadow.legacy
+Replaces: me.jjolano.shadow.beta
+Provides: me.jjolano.shadow.beta
+Filename: https://github.com/jjolano/Shadow/releases/download/v3.7.5/me.jjolano.shadow_3.7.5_iphoneos-arm64.deb
+Size: 100466
+MD5sum: bdd3a2fabde2f5361ef15b2fed5b1025
+SHA1: f46dbd21a5d92171f7d5133c575ac2aa75341222
+SHA256: e162945f37aae6925b14cd5ea902a196e9f390f4cf81cfd15106db92508d5102
+Section: System
+Description: A modern jailbreak detection bypass.
+Depiction: https://ios.jjolano.me/depictions/ios/me.jjolano.shadow.html
+SileoDepiction: https://ios.jjolano.me/depictions/ios/me.jjolano.shadow.json
+Author: jjolano
+Name: Shadow
+
+Package: me.jjolano.shadow
 Version: 3.7.6
 Architecture: iphoneos-arm
 Maintainer: jjolano
@@ -974,6 +1741,54 @@ Conflicts: me.jjolano.shadow.beta, me.jjolano.shadow.legacy
 Replaces: me.jjolano.shadow.beta
 Provides: me.jjolano.shadow.beta
 Filename: https://github.com/jjolano/ios-repo/releases/download/legacy/me.jjolano.shadow_3.7.6_iphoneos-arm64.deb
+Size: 100938
+MD5sum: d5d9e73e6fb80918eb95772361f123be
+SHA1: 22c6e9db9a75db1b4faff4292b7343d699e2de86
+SHA256: 52fdf82c814ab67700a51a13de0ca2138b5942b8b2e949493e04614aeef523d4
+Section: System
+Description: A modern jailbreak detection bypass.
+Depiction: https://ios.jjolano.me/depictions/ios/me.jjolano.shadow.html
+SileoDepiction: https://ios.jjolano.me/depictions/ios/me.jjolano.shadow.json
+Author: jjolano
+Name: Shadow
+
+Package: me.jjolano.shadow
+Version: 3.7.6
+Architecture: iphoneos-arm
+Maintainer: jjolano
+Installed-Size: 1428
+Pre-Depends: dpkg
+Depends: firmware (>= 8.0), com.opa334.altlist, com.opa334.libsandy, me.jjolano.fmwk.hookkit, me.jjolano.hkmodule.substrate, me.jjolano.fmwk.rootbridge
+Recommends: mobilesubstrate, preferenceloader, me.jjolano.hkmodule.fishhook
+Suggests: com.ps.injectionfoundation
+Conflicts: me.jjolano.shadow.beta, me.jjolano.shadow.legacy
+Replaces: me.jjolano.shadow.beta
+Provides: me.jjolano.shadow.beta
+Filename: https://github.com/jjolano/Shadow/releases/download/v3.7.6/me.jjolano.shadow_3.7.6_iphoneos-arm.deb
+Size: 164872
+MD5sum: d358e346e3c7d5530ca2498fddff2e4d
+SHA1: a2aa5f5bd2d8904ab04ec230c2b4c4e2e3ce9b9e
+SHA256: 2ce5c8ac813e4b0953284662f2540546353eef36c8206fbcb1aef155f07cabea
+Section: System
+Description: A modern jailbreak detection bypass.
+Depiction: https://ios.jjolano.me/depictions/ios/me.jjolano.shadow.html
+SileoDepiction: https://ios.jjolano.me/depictions/ios/me.jjolano.shadow.json
+Author: jjolano
+Name: Shadow
+
+Package: me.jjolano.shadow
+Version: 3.7.6
+Architecture: iphoneos-arm64
+Maintainer: jjolano
+Installed-Size: 1076
+Pre-Depends: dpkg
+Depends: firmware (>= 8.0), com.opa334.altlist, com.opa334.libsandy, me.jjolano.fmwk.hookkit, me.jjolano.hkmodule.substrate, me.jjolano.fmwk.rootbridge
+Recommends: mobilesubstrate, preferenceloader, me.jjolano.hkmodule.fishhook
+Suggests: com.ps.injectionfoundation
+Conflicts: me.jjolano.shadow.beta, me.jjolano.shadow.legacy
+Replaces: me.jjolano.shadow.beta
+Provides: me.jjolano.shadow.beta
+Filename: https://github.com/jjolano/Shadow/releases/download/v3.7.6/me.jjolano.shadow_3.7.6_iphoneos-arm64.deb
 Size: 100938
 MD5sum: d5d9e73e6fb80918eb95772361f123be
 SHA1: 22c6e9db9a75db1b4faff4292b7343d699e2de86
