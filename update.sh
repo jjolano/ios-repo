@@ -88,7 +88,7 @@ apt-ftparchive\
 
 # stamp the website footer with the index update time (UTC, ISO)
 STAMP=$(date -u +%Y-%m-%dT%H:%M:%SZ)
-sed -i "s|>Last updated <span id=\"last-updated\">—</span>|>Last updated <span id=\"last-updated\">$STAMP</span>|" index.html
+sed -i "s|\(>Last updated <span id=\"last-updated\">\)[^<]*\(</span>\)|\1$STAMP\2|" index.html
 
 git add Packages Packages.bz2 Packages.gz Packages.lzma Packages.xz Packages.zst Release update.sh index.html
 git diff --cached --quiet || { git commit -m "update repo"; git push; }
