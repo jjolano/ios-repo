@@ -1,17 +1,22 @@
 #!/bin/sh
 set -e
-BASE="https://github.com/jjolano/ios-repo/releases/download"
 STAGE=.stage
 rm -rf "$STAGE" && mkdir -p "$STAGE"
 
-for tag in $(gh release list --json tagName -q '.[].tagName'); do
-  mkdir -p "$STAGE/$tag"
-  gh release download "$tag" --dir "$STAGE/$tag" --pattern '*.deb'
-  # guard: every release must yield its .deb assets; a partial download means
-  # a degraded index — abort instead of publishing one.
-  total=$(gh release view "$tag" --json assets -q '[.assets[] | select(.name | endswith(".deb"))] | length')
-  got=$(ls "$STAGE/$tag"/*.deb 2>/dev/null | wc -l)
-  [ "$got" -eq "$total" ] || { echo "error: $tag: expected $total debs, downloaded $got" >&2; exit 1; }
+# Source repos that publish .deb releases for this apt repo.
+# Format: "owner/repo" — debs are pulled from each repo's releases.
+SOURCE_REPOS="jjolano/ios-repo jjolano/HookKit"
+
+for repo in $SOURCE_REPOS; do
+  for tag in $(gh release list -R "$repo" --json tagName -q '.[].tagName'); do
+    mkdir -p "$STAGE/$repo/$tag"
+    gh release download "$tag" -R "$repo" --dir "$STAGE/$repo/$tag" --pattern '*.deb'
+    # guard: every release must yield its .deb assets; a partial download means
+    # a degraded index — abort instead of publishing one.
+    total=$(gh release view "$tag" -R "$repo" --json assets -q '[.assets[] | select(.name | endswith(".deb"))] | length')
+    got=$(ls "$STAGE/$repo/$tag"/*.deb 2>/dev/null | wc -l)
+    [ "$got" -eq "$total" ] || { echo "error: $repo $tag: expected $total debs, downloaded $got" >&2; exit 1; }
+  done
 done
 
 # guard: abort if nothing was downloaded
@@ -21,7 +26,8 @@ if [ -z "$(ls -A "$STAGE" 2>/dev/null)" ]; then
 fi
 
 dpkg-scanpackages --multiversion "$STAGE" > Packages
-sed -i "s|^Filename: $STAGE/|Filename: $BASE/|" Packages
+# map .stage/<owner>/<repo>/<tag>/ -> https://github.com/<owner>/<repo>/releases/download/<tag>/
+sed -E "s|^Filename: $STAGE/([^/]+/[^/]+)/([^/]+)/|Filename: https://github.com/\1/releases/download/\2/|" Packages > Packages.tmp && mv Packages.tmp Packages
 
 # Inject depiction fields for packages with a depictions/ios/<id>.{json,html} file.
 # Sileo reads SileoDepiction (JSON), Cydia reads Depiction (HTML).
