@@ -1,22 +1,403 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-<title>jjolano - iOS Repo</title>
+<meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
+<title>jjolano · iOS Repo</title>
+<meta name="description" content="Personal iOS package repository by jjolano. Supports rootful (iphoneos-arm), rootless (iphoneos-arm64), and roothide (iphoneos-arm64e).">
+<meta name="theme-color" content="#0b0f14">
+<style>
+  :root {
+    --bg: #0b0f14;
+    --bg-soft: #10161d;
+    --card: #131a22;
+    --line: #232c36;
+    --text: #dbe2ea;
+    --muted: #8b98a7;
+    --accent: #f2b24a;
+    --accent-ink: #1a1408;
+    --mono: ui-monospace, "SF Mono", SFMono-Regular, Menlo, Consolas, monospace;
+    --sans: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  }
+
+  * { box-sizing: border-box; }
+
+  html {
+    color-scheme: dark;
+    -webkit-text-size-adjust: 100%;
+  }
+
+  body {
+    margin: 0;
+    background:
+      radial-gradient(900px 420px at 85% -10%, rgba(242, 178, 74, 0.07), transparent 60%),
+      radial-gradient(700px 380px at -10% 12%, rgba(64, 120, 220, 0.06), transparent 55%),
+      var(--bg);
+    color: var(--text);
+    font-family: var(--sans);
+    line-height: 1.55;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  .wrap {
+    max-width: 780px;
+    margin: 0 auto;
+    padding: 56px 20px 40px;
+  }
+
+  /* ---- page-load reveal ---- */
+  .reveal {
+    opacity: 0;
+    transform: translateY(10px);
+    animation: rise .6s cubic-bezier(.2, .7, .2, 1) forwards;
+  }
+  .reveal:nth-of-type(2) { animation-delay: .10s; }
+  .reveal:nth-of-type(3) { animation-delay: .18s; }
+  .reveal:nth-of-type(4) { animation-delay: .26s; }
+  .reveal:nth-of-type(5) { animation-delay: .34s; }
+  @keyframes rise {
+    to { opacity: 1; transform: none; }
+  }
+
+  /* ---- hero ---- */
+  .eyebrow {
+    display: inline-block;
+    margin: 0 0 14px;
+    font: 600 12px/1 var(--mono);
+    letter-spacing: .14em;
+    text-transform: uppercase;
+    color: var(--accent);
+  }
+
+  h1 {
+    margin: 0;
+    font-size: clamp(2.2rem, 8vw, 3.1rem);
+    font-weight: 700;
+    letter-spacing: -.02em;
+    line-height: 1.08;
+  }
+
+  .tagline {
+    margin: 14px 0 0;
+    max-width: 34em;
+    font-size: clamp(1rem, 2.5vw, 1.1rem);
+    color: var(--muted);
+  }
+
+  .arch-list {
+    list-style: none;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    padding: 0;
+    margin: 22px 0 0;
+  }
+
+  .chip {
+    font: 500 12px/1.4 var(--mono);
+    color: var(--muted);
+    border: 1px solid var(--line);
+    border-radius: 999px;
+    padding: 6px 11px;
+  }
+  .chip b { color: var(--text); font-weight: 600; }
+
+  /* ---- sections ---- */
+  section { margin-top: 56px; }
+
+  h2 {
+    margin: 0 0 6px;
+    font-size: 1.15rem;
+    letter-spacing: .01em;
+  }
+
+  .section-note {
+    margin: 0 0 20px;
+    font-size: .95rem;
+    color: var(--muted);
+  }
+
+  /* ---- add-repo CTA ---- */
+  .cta-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 12px;
+  }
+
+  .cta {
+    display: block;
+    width: 100%;
+    padding: 16px 18px;
+    border: 1px solid var(--line);
+    border-radius: 14px;
+    background: var(--card);
+    color: var(--text);
+    text-decoration: none;
+    transition: border-color .18s, background .18s, transform .18s;
+    -webkit-tap-highlight-color: transparent;
+  }
+  .cta:hover, .cta:focus-visible {
+    border-color: var(--accent);
+    background: #18202a;
+    outline: none;
+  }
+  .cta:active { transform: scale(.985); }
+
+  .cta-top {
+    display: flex;
+    align-items: baseline;
+    justify-content: space-between;
+    gap: 12px;
+  }
+
+  .cta-name {
+    font-weight: 700;
+    font-size: 1.05rem;
+  }
+  .cta-name::after { content: " ›"; color: var(--accent); }
+
+  .cta-arch { font: 600 11px/1 var(--mono); color: var(--accent); }
+
+  .cta-desc {
+    margin: 5px 0 9px;
+    font-size: .92rem;
+    color: var(--muted);
+  }
+
+  .cta-url {
+    display: block;
+    font: 12px/1.5 var(--mono);
+    color: var(--muted);
+    overflow-wrap: anywhere;
+  }
+
+  .scheme-note {
+    margin: 14px 0 0;
+    font-size: .88rem;
+    color: var(--muted);
+  }
+
+  /* ---- variant table ---- */
+  .variants {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    border: 1px solid var(--line);
+    border-radius: 14px;
+    overflow: hidden;
+  }
+  .variants li {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 2px 14px;
+    align-items: baseline;
+    padding: 12px 16px;
+  }
+  .variants li + li { border-top: 1px solid var(--line); }
+  .variants b { font-size: .95rem; }
+  .variants code {
+    font: 12px/1.5 var(--mono);
+    color: var(--accent);
+    overflow-wrap: anywhere;
+  }
+  .variants span:last-child { color: var(--muted); font-size: .9rem; }
+
+  /* ---- package cards ---- */
+  .pkg-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 12px;
+  }
+
+  .pkg {
+    border: 1px solid var(--line);
+    border-radius: 14px;
+    background: var(--card);
+    padding: 18px;
+  }
+
+  .pkg-head {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 4px 10px;
+    align-items: baseline;
+  }
+  .pkg h3 { margin: 0; font-size: 1.1rem; }
+  .pkg-id { font: 12px/1.6 var(--mono); color: var(--muted); }
+
+  .pkg-desc { margin: 8px 0 14px; font-size: .95rem; color: var(--muted); }
+
+  .pkg-foot {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    align-items: center;
+  }
+
+  .src-link {
+    font-size: .92rem;
+    font-weight: 600;
+    color: var(--accent);
+    text-decoration: none;
+  }
+  .src-link:hover, .src-link:focus-visible { text-decoration: underline; }
+
+  /* ---- footer ---- */
+  footer {
+    margin-top: 72px;
+    padding-top: 20px;
+    border-top: 1px solid var(--line);
+    font-size: .85rem;
+    color: var(--muted);
+  }
+  footer a { color: var(--text); }
+  footer .foot-row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 4px 18px;
+    justify-content: space-between;
+  }
+
+  /* ---- desktop ---- */
+  @media (min-width: 640px) {
+    .wrap { padding-top: 72px; }
+    .cta-grid, .pkg-grid { grid-template-columns: 1fr 1fr; }
+    .cta {
+      padding: 18px 20px;
+      border-radius: 16px;
+    }
+    .variants li {
+      display: grid;
+      grid-template-columns: 180px 1fr;
+      gap: 2px 18px;
+      padding: 14px 18px;
+    }
+    .variants span:last-child { grid-column: 2; }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .reveal { animation: none; opacity: 1; transform: none; }
+  }
+</style>
 </head>
 <body>
-<h1>jjolano</h1>
-<p>Personal iOS package repository. Supports rootful (iphoneos-arm), rootless (iphoneos-arm64), and roothide (iphoneos-arm64e).</p>
-<h2>Add the repo</h2>
-<p>
-<a href="zbra://sources/add/https://ios.jjolano.me">Zebra</a> |
-<a href="sileo://source/https://ios.jjolano.me">Sileo</a> |
-<a href="cydia://url/https://cydia.saurik.com/api/share#?source=https://ios.jjolano.me">Cydia</a>
-</p>
-<h2>Packages</h2>
-<ul>
-<li><strong>HookKit Framework</strong> (<code>me.jjolano.fmwk.hookkit</code>) — unified hooking framework</li>
-<li><strong>Shadow</strong> (<code>me.jjolano.shadow</code>) — jailbreak detection bypass</li>
-</ul>
+<div class="wrap">
+
+  <header class="reveal">
+    <span class="eyebrow">Personal iOS package repository</span>
+    <h1>jjolano</h1>
+    <p class="tagline">
+      Open-source packages for jailbroken iOS. Supports rootful
+      (<code>iphoneos-arm</code>), rootless (<code>iphoneos-arm64</code>),
+      and roothide (<code>iphoneos-arm64e</code>).
+    </p>
+    <ul class="arch-list" aria-label="Supported variants">
+      <li class="chip"><b>rootful</b>&nbsp; iphoneos-arm</li>
+      <li class="chip"><b>rootless</b>&nbsp; iphoneos-arm64</li>
+      <li class="chip"><b>roothide</b>&nbsp; iphoneos-arm64e</li>
+    </ul>
+  </header>
+
+  <main>
+    <section class="reveal" aria-labelledby="add-heading">
+      <h2 id="add-heading">Add the repo</h2>
+      <p class="section-note">Tap the button for your package manager to add this repository to your device.</p>
+      <div class="cta-grid">
+        <a class="cta" href="zbra://sources/add/https://ios.jjolano.me" aria-label="Add repository in Zebra">
+          <span class="cta-top">
+            <span class="cta-name">Zebra</span>
+            <span class="cta-arch">iphoneos-arm</span>
+          </span>
+          <span class="cta-desc">Lightweight, modern package manager.</span>
+          <code class="cta-url">zbra://sources/add/https://ios.jjolano.me</code>
+        </a>
+        <a class="cta" href="sileo://source/https://ios.jjolano.me" aria-label="Add repository in Sileo">
+          <span class="cta-top">
+            <span class="cta-name">Sileo</span>
+            <span class="cta-arch">iphoneos-arm64</span>
+          </span>
+          <span class="cta-desc">Modern default for newer jailbreaks.</span>
+          <code class="cta-url">sileo://source/https://ios.jjolano.me</code>
+        </a>
+        <a class="cta" href="cydia://url/https://cydia.saurik.com/api/share#?source=https://ios.jjolano.me" aria-label="Add repository in Cydia">
+          <span class="cta-top">
+            <span class="cta-name">Cydia</span>
+            <span class="cta-arch">iphoneos-arm64e</span>
+          </span>
+          <span class="cta-desc">The classic package manager.</span>
+          <code class="cta-url">cydia://url/https://cydia.saurik.com/api/share#?source=https://ios.jjolano.me</code>
+        </a>
+      </div>
+      <p class="scheme-note">
+        On your iPhone, tapping a button opens the app with this repository added.
+        From a computer, copy the link and paste it into your package manager, or
+        manually add <code>https://ios.jjolano.me</code> in its sources screen.
+      </p>
+    </section>
+
+    <section class="reveal" aria-labelledby="variants-heading">
+      <h2 id="variants-heading">Supported variants</h2>
+      <p class="section-note">Packages are built for all three modern jailbreak environments.</p>
+      <ul class="variants">
+        <li>
+          <b>Rootful</b>
+          <code>iphoneos-arm</code>
+          <span>The traditional layout, where the root filesystem is writable.</span>
+        </li>
+        <li>
+          <b>Rootless</b>
+          <code>iphoneos-arm64</code>
+          <span>The default on modern jailbreaks; installed under <code>/var/jb</code>.</span>
+        </li>
+        <li>
+          <b>Roothide</b>
+          <code>iphoneos-arm64e</code>
+          <span>A rootless-style layout that keeps the root filesystem intact.</span>
+        </li>
+      </ul>
+    </section>
+
+    <section class="reveal" aria-labelledby="packages-heading">
+      <h2 id="packages-heading">Packages</h2>
+      <p class="section-note">Everything here is open source on GitHub.</p>
+      <div class="pkg-grid">
+        <article class="pkg">
+          <div class="pkg-head">
+            <h3>HookKit Framework</h3>
+            <code class="pkg-id">me.jjolano.fmwk.hookkit</code>
+          </div>
+          <p class="pkg-desc">A unified hooking framework for jailbroken iOS.</p>
+          <div class="pkg-foot">
+            <span class="chip"><b>rootful</b></span>
+            <span class="chip"><b>rootless</b></span>
+            <span class="chip"><b>roothide</b></span>
+            <a class="src-link" href="https://github.com/jjolano/HookKit">Source ↗</a>
+          </div>
+        </article>
+        <article class="pkg">
+          <div class="pkg-head">
+            <h3>Shadow</h3>
+            <code class="pkg-id">me.jjolano.shadow</code>
+          </div>
+          <p class="pkg-desc">A jailbreak detection bypass.</p>
+          <div class="pkg-foot">
+            <span class="chip"><b>rootful</b></span>
+            <span class="chip"><b>rootless</b></span>
+            <span class="chip"><b>roothide</b></span>
+            <a class="src-link" href="https://github.com/jjolano/Shadow">Source ↗</a>
+          </div>
+        </article>
+      </div>
+    </section>
+  </main>
+
+  <footer class="reveal">
+    <div class="foot-row">
+      <span>Packages hosted via GitHub Releases and Pages.</span>
+      <span><a href="https://github.com/jjolano">github.com/jjolano</a></span>
+    </div>
+  </footer>
+
+</div>
 </body>
 </html>
