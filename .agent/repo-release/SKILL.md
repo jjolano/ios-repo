@@ -43,6 +43,30 @@ Currently: `jjolano/ios-repo` (this repo, holds the `legacy` debs) and `jjolano/
 - Site live: `curl -sI https://ios.jjolano.me/Packages` returns 200
 - Depiction fields injected: `grep -c "^SileoDepiction:" Packages` (should equal package count for depicted ids)
 
+## Un-release (pull a release)
+
+Releases are picked up automatically (see Gotchas), but **un-releasing is manual**. Removing release assets or deleting a release fires **no event** on this repo, so the index goes stale until the next poll — always run the poll manually after an un-release.
+
+**If debs are in THIS repo's releases** (e.g. legacy):
+```sh
+# remove the debs (or delete release + tag)
+gh release delete-asset legacy <deb> --yes
+# or: gh release delete <tag> --yes --cleanup-tag
+
+# update the index NOW (don't wait for the 6h poll)
+gh workflow run poll-sources.yml
+```
+
+**If debs are in an OFFICIAL repo's releases** (HookKit/Shadow):
+```sh
+gh release delete <tag> -R jjolano/Shadow --yes --cleanup-tag
+gh workflow run poll-sources.yml   # in this repo
+```
+
+The poll re-runs `update.sh`, which lists current releases from all sources; the removed release's stanzas drop from the index and its URLs 404. If the same version also exists in another source (e.g. legacy), the dedupe keeps the other — which is the right behavior.
+
+**Verify after un-release**: `grep -c "^Filename:.*<version>" Packages` → 0, and `curl -sIL <removed-url>` → 404.
+
 ## Gotchas
 
 - **Never `git add .`** — will stage the gitignored deb dirs if present. `update.sh` adds explicit paths only.
@@ -50,3 +74,4 @@ Currently: `jjolano/ios-repo` (this repo, holds the `legacy` debs) and `jjolano/
 - **`dpkg-scanpackages` emits `Filename: .stage/...`** — `update.sh`'s sed rewrites `.stage/<owner>/<repo>/<tag>/` → `https://github.com/<owner>/<repo>/releases/download/<tag>/`. If you change the stage layout, update the sed.
 - **`legacy` release** — contains all pre-migration debs; keep it, some users may still be on old versions.
 - **Intentional asset removal** — removing debs from a release (premature release, etc.) is fine: the download guard only aborts on a *partial* download (fewer debs than the release lists), and the next `update.sh` run drops them from the index.
+- **Auto-update on official releases** — `update repo` fires on releases published in THIS repo; `poll sources` (every 6h + manual) catches releases in official repos. For instant updates, `repository_dispatch` from the source repos would be needed (bigger lift, not currently done).
