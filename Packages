@@ -49,6 +49,26 @@ Tag: role::developer
 Author: jjolano
 Name: HookKit Framework
 
+Package: me.jjolano.fmwk.hookkit
+Version: 2.1.1-1
+Architecture: iphoneos-arm
+Maintainer: jjolano
+Installed-Size: 18436
+Depends: firmware (>= 9.0), me.jjolano.fmwk.rootbridge
+Conflicts: me.jjolano.hkmodule.dobby, me.jjolano.hkmodule.ellekit, me.jjolano.hkmodule.fishhook, me.jjolano.hkmodule.libhooker, me.jjolano.hkmodule.substitute, me.jjolano.hkmodule.substrate
+Replaces: me.jjolano.hkmodule.dobby, me.jjolano.hkmodule.ellekit, me.jjolano.hkmodule.fishhook, me.jjolano.hkmodule.libhooker, me.jjolano.hkmodule.substitute, me.jjolano.hkmodule.substrate
+Provides: me.jjolano.hkmodule.dobby, me.jjolano.hkmodule.ellekit, me.jjolano.hkmodule.fishhook, me.jjolano.hkmodule.libhooker, me.jjolano.hkmodule.substitute, me.jjolano.hkmodule.substrate
+Filename: root/me.jjolano.fmwk.hookkit_2.1.1-1_iphoneos-arm.deb
+Size: 2198874
+MD5sum: 8a3cd00f763931b54716a3f2402561f9
+SHA1: 808c8dea8ca4feec704ce11cb969072ea310f23c
+SHA256: 7cb7b1bf5bf144112c1d8d408ea58261415c9348b3b559eee70f80dd523803c6
+Section: Development
+Description: An iOS developer framework for unified hooking methods.
+Tag: role::developer
+Author: jjolano
+Name: HookKit Framework
+
 Package: me.jjolano.fmwk.modulous
 Version: 1.0.6
 Architecture: iphoneos-arm
@@ -110,6 +130,23 @@ Size: 5942
 MD5sum: 55a048eb33aafb6f3a7b792b7184d904
 SHA1: b778d0065f8f6ed6c9abff8838190d3df9824b04
 SHA256: 0bec075deff352772f5d24098835f746e89e9b5a2392d0f7e699dd5d0f48ebae
+Section: Development
+Description: An iOS developer framework for rootless tweak development.
+Tag: role::developer
+Author: jjolano
+Name: RootBridge Framework
+
+Package: me.jjolano.fmwk.rootbridge
+Version: 1.0.2
+Architecture: iphoneos-arm
+Maintainer: jjolano
+Installed-Size: 304
+Depends: firmware (>= 8.0)
+Filename: root/me.jjolano.fmwk.rootbridge_1.0.2_iphoneos-arm.deb
+Size: 6846
+MD5sum: af945e280a70aa791599cba56cf7b52e
+SHA1: e8ddcb4126f1a2bc1fd8194ff2e36f439ac79557
+SHA256: 989845b7e3d468f6622f365a6cb0d7ec84a0c882945b6918f706c9cbc5e29364
 Section: Development
 Description: An iOS developer framework for rootless tweak development.
 Tag: role::developer
@@ -483,6 +520,28 @@ Description: A modern jailbreak detection bypass.
 Author: jjolano
 Name: Shadow
 
+Package: me.jjolano.shadow
+Version: 4.0.0
+Architecture: iphoneos-arm
+Maintainer: jjolano
+Installed-Size: 3004
+Pre-Depends: dpkg
+Depends: firmware (>= 9.0), com.opa334.altlist, com.opa334.libsandy, me.jjolano.fmwk.hookkit, me.jjolano.fmwk.rootbridge
+Recommends: mobilesubstrate, preferenceloader
+Suggests: com.ps.injectionfoundation
+Conflicts: me.jjolano.shadow.beta, me.jjolano.shadow.legacy
+Replaces: me.jjolano.shadow.beta
+Provides: me.jjolano.shadow.beta
+Filename: root/me.jjolano.shadow_4.0.0_iphoneos-arm.deb
+Size: 408622
+MD5sum: ae5bf4f34d53cc2410bd3ffb61eb011f
+SHA1: 5c140d5b64cbebea5442df6eeb6ce4e29f1f85e7
+SHA256: ba751a886a0ac35cc650e4a2d9dc98be6a47b232a12dbfc121b0b81a38380e75
+Section: System
+Description: A modern jailbreak detection bypass.
+Author: jjolano
+Name: Shadow
+
 Package: me.jjolano.shadow.legacy
 Version: 2.0.23
 Architecture: iphoneos-arm
@@ -552,6 +611,26 @@ Tag: role::developer
 Author: jjolano
 Name: HookKit Framework
 
+Package: me.jjolano.fmwk.hookkit
+Version: 2.1.1-1
+Architecture: iphoneos-arm64
+Maintainer: jjolano
+Installed-Size: 17612
+Depends: firmware (>= 9.0), me.jjolano.fmwk.rootbridge
+Conflicts: me.jjolano.hkmodule.dobby, me.jjolano.hkmodule.ellekit, me.jjolano.hkmodule.fishhook, me.jjolano.hkmodule.libhooker, me.jjolano.hkmodule.substitute, me.jjolano.hkmodule.substrate
+Replaces: me.jjolano.hkmodule.dobby, me.jjolano.hkmodule.ellekit, me.jjolano.hkmodule.fishhook, me.jjolano.hkmodule.libhooker, me.jjolano.hkmodule.substitute, me.jjolano.hkmodule.substrate
+Provides: me.jjolano.hkmodule.dobby, me.jjolano.hkmodule.ellekit, me.jjolano.hkmodule.fishhook, me.jjolano.hkmodule.libhooker, me.jjolano.hkmodule.substitute, me.jjolano.hkmodule.substrate
+Filename: rootless/me.jjolano.fmwk.hookkit_2.1.1-1_iphoneos-arm64.deb
+Size: 1973470
+MD5sum: 539f5e5381812010e119163d96cee87c
+SHA1: f91ecb9b0924bc1bc3ab3f291b82796bb0ebf79e
+SHA256: d3593597880ca0e07ddea7181e79c92f5448e09e2c37687be40c0ac60f211667
+Section: Development
+Description: An iOS developer framework for unified hooking methods.
+Tag: role::developer
+Author: jjolano
+Name: HookKit Framework
+
 Package: me.jjolano.fmwk.modulous
 Version: 1.0.6
 Architecture: iphoneos-arm64
@@ -613,6 +692,23 @@ Size: 3804
 MD5sum: 12c8f4a4bc82c1c5c4800ca3a2f68799
 SHA1: 98fc662255ebf22df9c1e6eee38cd88cfd93f8c2
 SHA256: 979bad8aef22b12b00c6d5db097f7d33b2319ab403260892d66233a9b1416f3a
+Section: Development
+Description: An iOS developer framework for rootless tweak development.
+Tag: role::developer
+Author: jjolano
+Name: RootBridge Framework
+
+Package: me.jjolano.fmwk.rootbridge
+Version: 1.0.2
+Architecture: iphoneos-arm64
+Maintainer: jjolano
+Installed-Size: 192
+Depends: firmware (>= 14.0)
+Filename: rootless/me.jjolano.fmwk.rootbridge_1.0.2_iphoneos-arm64.deb
+Size: 4990
+MD5sum: be9f69a191f3f6ea04bf8e8c6c932e6f
+SHA1: ee3f7ad2d5648053ac7a5956e252bc5471ab7047
+SHA256: 277e2bbb8ff8c04652ca141673a26b367a10e17145d613074c95e6ec302b4eb8
 Section: Development
 Description: An iOS developer framework for rootless tweak development.
 Tag: role::developer
@@ -883,6 +979,28 @@ Size: 100938
 MD5sum: d5d9e73e6fb80918eb95772361f123be
 SHA1: 22c6e9db9a75db1b4faff4292b7343d699e2de86
 SHA256: 52fdf82c814ab67700a51a13de0ca2138b5942b8b2e949493e04614aeef523d4
+Section: System
+Description: A modern jailbreak detection bypass.
+Author: jjolano
+Name: Shadow
+
+Package: me.jjolano.shadow
+Version: 4.0.0
+Architecture: iphoneos-arm64
+Maintainer: jjolano
+Installed-Size: 1960
+Pre-Depends: dpkg
+Depends: firmware (>= 12.0), com.opa334.altlist, com.opa334.libsandy, me.jjolano.fmwk.hookkit, me.jjolano.fmwk.rootbridge
+Recommends: mobilesubstrate, preferenceloader
+Suggests: com.ps.injectionfoundation
+Conflicts: me.jjolano.shadow.beta, me.jjolano.shadow.legacy
+Replaces: me.jjolano.shadow.beta
+Provides: me.jjolano.shadow.beta
+Filename: rootless/me.jjolano.shadow_4.0.0_iphoneos-arm64.deb
+Size: 223534
+MD5sum: f7b65b121438f2df984a0c84ea29c81e
+SHA1: 2868f773867afd5978fbda398f5869aaa440a428
+SHA256: 7501fc90d33e00457e0af4760b65f23d3f2776cce99dcac42b38f2b10d011800
 Section: System
 Description: A modern jailbreak detection bypass.
 Author: jjolano
