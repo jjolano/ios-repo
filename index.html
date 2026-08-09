@@ -156,8 +156,6 @@
   }
   .cta-name::after { content: " ›"; color: var(--accent); }
 
-  .cta-arch { font: 600 11px/1 var(--mono); color: var(--accent); }
-
   .cta-desc {
     margin: 5px 0 9px;
     font-size: .92rem;
@@ -242,6 +240,23 @@
   }
   .src-link:hover, .src-link:focus-visible { text-decoration: underline; }
 
+  /* ---- secondary package list ---- */
+  .pkg-more {
+    list-style: none;
+    margin: 14px 0 0;
+    padding: 4px 0 0;
+    border-top: 1px solid var(--line);
+    font-size: .9rem;
+    color: var(--muted);
+  }
+  .pkg-more li { padding: 7px 2px; }
+  .pkg-more b { color: var(--text); font-weight: 600; }
+  .pkg-more code {
+    font: 11.5px/1.5 var(--mono);
+    color: var(--muted);
+    overflow-wrap: anywhere;
+  }
+
   /* ---- footer ---- */
   footer {
     margin-top: 72px;
@@ -306,7 +321,6 @@
         <a class="cta" href="zbra://sources/add/https://ios.jjolano.me" aria-label="Add repository in Zebra">
           <span class="cta-top">
             <span class="cta-name">Zebra</span>
-            <span class="cta-arch">iphoneos-arm</span>
           </span>
           <span class="cta-desc">Lightweight, modern package manager.</span>
           <code class="cta-url">zbra://sources/add/https://ios.jjolano.me</code>
@@ -314,7 +328,6 @@
         <a class="cta" href="sileo://source/https://ios.jjolano.me" aria-label="Add repository in Sileo">
           <span class="cta-top">
             <span class="cta-name">Sileo</span>
-            <span class="cta-arch">iphoneos-arm64</span>
           </span>
           <span class="cta-desc">Modern default for newer jailbreaks.</span>
           <code class="cta-url">sileo://source/https://ios.jjolano.me</code>
@@ -322,7 +335,6 @@
         <a class="cta" href="cydia://url/https://cydia.saurik.com/api/share#?source=https://ios.jjolano.me" aria-label="Add repository in Cydia">
           <span class="cta-top">
             <span class="cta-name">Cydia</span>
-            <span class="cta-arch">iphoneos-arm64e</span>
           </span>
           <span class="cta-desc">The classic package manager.</span>
           <code class="cta-url">cydia://url/https://cydia.saurik.com/api/share#?source=https://ios.jjolano.me</code>
@@ -337,7 +349,7 @@
 
     <section class="reveal" aria-labelledby="variants-heading">
       <h2 id="variants-heading">Supported variants</h2>
-      <p class="section-note">Packages are built for all three modern jailbreak environments.</p>
+      <p class="section-note">Packages are built for the architectures your jailbreak uses. Current packages (HookKit 2.x, Shadow 4.x) cover all three; older ones are rootful/rootless only.</p>
       <ul class="variants">
         <li>
           <b>Rootful</b>
@@ -352,21 +364,21 @@
         <li>
           <b>Roothide</b>
           <code>iphoneos-arm64e</code>
-          <span>A rootless-style layout that keeps the root filesystem intact.</span>
+          <span>A rootless-style layout that hides the jailbreak from apps.</span>
         </li>
       </ul>
     </section>
 
     <section class="reveal" aria-labelledby="packages-heading">
       <h2 id="packages-heading">Packages</h2>
-      <p class="section-note">Everything here is open source on GitHub.</p>
+      <p class="section-note">The repo's highlights. Sources are on GitHub.</p>
       <div class="pkg-grid">
         <article class="pkg">
           <div class="pkg-head">
             <h3>HookKit Framework</h3>
             <code class="pkg-id">me.jjolano.fmwk.hookkit</code>
           </div>
-          <p class="pkg-desc">A unified hooking framework for jailbroken iOS.</p>
+          <p class="pkg-desc">A developer framework for unified hooking methods.</p>
           <div class="pkg-foot">
             <span class="chip"><b>rootful</b></span>
             <span class="chip"><b>rootless</b></span>
@@ -388,6 +400,13 @@
           </div>
         </article>
       </div>
+      <ul class="pkg-more">
+        <li><b>Modulous Framework</b> <code>me.jjolano.fmwk.modulous</code> — framework for modular software.</li>
+        <li><b>RootBridge Framework</b> <code>me.jjolano.fmwk.rootbridge</code> — developer framework for rootless tweak development.</li>
+        <li><b>HookKit Modules</b> — Dobby, ElleKit, fishhook, libhooker, Substitute, and Cydia Substrate backends for HookKit 1.x (bundled into HookKit 2.x).</li>
+        <li><b>Shadow (legacy)</b> <code>me.jjolano.shadow.legacy</code> — Shadow v2 for iOS 8–14, unsupported.</li>
+        <li><b>Sileo Respring</b> <code>me.jjolano.sileorespring</code> — shows a Restart SpringBoard button in Sileo (rootful only).</li>
+      </ul>
     </section>
   </main>
 
