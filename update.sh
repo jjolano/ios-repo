@@ -28,7 +28,13 @@ if [ -z "$(ls -A "$STAGE" 2>/dev/null)" ]; then
   exit 1
 fi
 
-dpkg-scanpackages --multiversion "$STAGE" > Packages
+# Scan per repo in SOURCE_REPOS order so earlier sources (official repos) emit
+# stanzas first — the dedupe below keeps the first occurrence per version.
+: > Packages
+for repo in $SOURCE_REPOS; do
+  [ -d "$STAGE/$repo" ] || continue
+  dpkg-scanpackages --multiversion "$STAGE/$repo" >> Packages
+done
 # map .stage/<owner>/<repo>/<tag>/ -> https://github.com/<owner>/<repo>/releases/download/<tag>/
 sed -E "s|^Filename: $STAGE/([^/]+/[^/]+)/([^/]+)/|Filename: https://github.com/\1/releases/download/\2/|" Packages > Packages.tmp && mv Packages.tmp Packages
 
