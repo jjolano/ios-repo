@@ -9,11 +9,13 @@ SOURCE_REPOS="jjolano/ios-repo jjolano/HookKit"
 
 for repo in $SOURCE_REPOS; do
   for tag in $(gh release list -R "$repo" --json tagName -q '.[].tagName'); do
+    # skip releases with no .deb assets (e.g. source-only releases)
+    total=$(gh release view "$tag" -R "$repo" --json assets -q '[.assets[] | select(.name | endswith(".deb"))] | length')
+    [ "$total" -gt 0 ] || continue
     mkdir -p "$STAGE/$repo/$tag"
     gh release download "$tag" -R "$repo" --dir "$STAGE/$repo/$tag" --pattern '*.deb'
     # guard: every release must yield its .deb assets; a partial download means
     # a degraded index — abort instead of publishing one.
-    total=$(gh release view "$tag" -R "$repo" --json assets -q '[.assets[] | select(.name | endswith(".deb"))] | length')
     got=$(ls "$STAGE/$repo/$tag"/*.deb 2>/dev/null | wc -l)
     [ "$got" -eq "$total" ] || { echo "error: $repo $tag: expected $total debs, downloaded $got" >&2; exit 1; }
   done
