@@ -7,6 +7,11 @@ rm -rf "$STAGE" && mkdir -p "$STAGE"
 for tag in $(gh release list --json tagName -q '.[].tagName'); do
   mkdir -p "$STAGE/$tag"
   gh release download "$tag" --dir "$STAGE/$tag" --pattern '*.deb'
+  # guard: every release must yield its .deb assets; a partial download means
+  # a degraded index — abort instead of publishing one.
+  total=$(gh release view "$tag" --json assets -q '[.assets[] | select(.name | endswith(".deb"))] | length')
+  got=$(ls "$STAGE/$tag"/*.deb 2>/dev/null | wc -l)
+  [ "$got" -eq "$total" ] || { echo "error: $tag: expected $total debs, downloaded $got" >&2; exit 1; }
 done
 
 # guard: abort if nothing was downloaded
