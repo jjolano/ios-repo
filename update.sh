@@ -5,7 +5,7 @@ rm -rf "$STAGE" && mkdir -p "$STAGE"
 
 # Source repos that publish .deb releases for this apt repo.
 # Format: "owner/repo" — debs are pulled from each repo's releases.
-SOURCE_REPOS="jjolano/ios-repo jjolano/HookKit"
+SOURCE_REPOS="jjolano/ios-repo jjolano/HookKit jjolano/Shadow"
 
 for repo in $SOURCE_REPOS; do
   for tag in $(gh release list -R "$repo" --json tagName -q '.[].tagName'); do
