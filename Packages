@@ -92,7 +92,7 @@ Depends: firmware (>= 9.0), me.jjolano.fmwk.rootbridge
 Conflicts: me.jjolano.hkmodule.dobby, me.jjolano.hkmodule.ellekit, me.jjolano.hkmodule.fishhook, me.jjolano.hkmodule.libhooker, me.jjolano.hkmodule.substitute, me.jjolano.hkmodule.substrate
 Replaces: me.jjolano.hkmodule.dobby, me.jjolano.hkmodule.ellekit, me.jjolano.hkmodule.fishhook, me.jjolano.hkmodule.libhooker, me.jjolano.hkmodule.substitute, me.jjolano.hkmodule.substrate
 Provides: me.jjolano.hkmodule.dobby, me.jjolano.hkmodule.ellekit, me.jjolano.hkmodule.fishhook, me.jjolano.hkmodule.libhooker, me.jjolano.hkmodule.substitute, me.jjolano.hkmodule.substrate
-Filename: https://github.com/jjolano/ios-repo/releases/download/legacy/me.jjolano.fmwk.hookkit_2.1.1-1_iphoneos-arm.deb
+Filename: https://github.com/jjolano/ios-repo/releases/download/hookkit-2.1.1-1/me.jjolano.fmwk.hookkit_2.1.1-1_iphoneos-arm.deb
 Size: 2198874
 MD5sum: 8a3cd00f763931b54716a3f2402561f9
 SHA1: 808c8dea8ca4feec704ce11cb969072ea310f23c
@@ -112,7 +112,7 @@ Depends: firmware (>= 15.0)
 Conflicts: me.jjolano.hkmodule.dobby, me.jjolano.hkmodule.ellekit, me.jjolano.hkmodule.fishhook, me.jjolano.hkmodule.libhooker, me.jjolano.hkmodule.substitute, me.jjolano.hkmodule.substrate
 Replaces: me.jjolano.hkmodule.dobby, me.jjolano.hkmodule.ellekit, me.jjolano.hkmodule.fishhook, me.jjolano.hkmodule.libhooker, me.jjolano.hkmodule.substitute, me.jjolano.hkmodule.substrate
 Provides: me.jjolano.hkmodule.dobby, me.jjolano.hkmodule.ellekit, me.jjolano.hkmodule.fishhook, me.jjolano.hkmodule.libhooker, me.jjolano.hkmodule.substitute, me.jjolano.hkmodule.substrate
-Filename: https://github.com/jjolano/ios-repo/releases/download/legacy/me.jjolano.fmwk.hookkit_2.1.1-1_iphoneos-arm64e.deb
+Filename: https://github.com/jjolano/ios-repo/releases/download/hookkit-2.1.1-1/me.jjolano.fmwk.hookkit_2.1.1-1_iphoneos-arm64e.deb
 Size: 1972746
 MD5sum: 5f9a5f9fd392cee8c2ca6c74f4de2b4e
 SHA1: ce67ea7e424b0025ed047447ec62ae13e30c6b2a
@@ -132,7 +132,7 @@ Depends: firmware (>= 9.0), me.jjolano.fmwk.rootbridge
 Conflicts: me.jjolano.hkmodule.dobby, me.jjolano.hkmodule.ellekit, me.jjolano.hkmodule.fishhook, me.jjolano.hkmodule.libhooker, me.jjolano.hkmodule.substitute, me.jjolano.hkmodule.substrate
 Replaces: me.jjolano.hkmodule.dobby, me.jjolano.hkmodule.ellekit, me.jjolano.hkmodule.fishhook, me.jjolano.hkmodule.libhooker, me.jjolano.hkmodule.substitute, me.jjolano.hkmodule.substrate
 Provides: me.jjolano.hkmodule.dobby, me.jjolano.hkmodule.ellekit, me.jjolano.hkmodule.fishhook, me.jjolano.hkmodule.libhooker, me.jjolano.hkmodule.substitute, me.jjolano.hkmodule.substrate
-Filename: https://github.com/jjolano/ios-repo/releases/download/legacy/me.jjolano.fmwk.hookkit_2.1.1-1_iphoneos-arm64.deb
+Filename: https://github.com/jjolano/ios-repo/releases/download/hookkit-2.1.1-1/me.jjolano.fmwk.hookkit_2.1.1-1_iphoneos-arm64.deb
 Size: 1973470
 MD5sum: 539f5e5381812010e119163d96cee87c
 SHA1: f91ecb9b0924bc1bc3ab3f291b82796bb0ebf79e
