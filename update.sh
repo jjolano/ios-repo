@@ -5,7 +5,8 @@ rm -rf "$STAGE" && mkdir -p "$STAGE"
 
 # Source repos that publish .deb releases for this apt repo.
 # Format: "owner/repo" — debs are pulled from each repo's releases.
-SOURCE_REPOS="jjolano/ios-repo jjolano/HookKit jjolano/Shadow"
+# Order matters: project repos first so they win the dedupe below.
+SOURCE_REPOS="jjolano/HookKit jjolano/Shadow jjolano/ios-repo"
 
 for repo in $SOURCE_REPOS; do
   for tag in $(gh release list -R "$repo" --json tagName -q '.[].tagName'); do
@@ -30,6 +31,24 @@ fi
 dpkg-scanpackages --multiversion "$STAGE" > Packages
 # map .stage/<owner>/<repo>/<tag>/ -> https://github.com/<owner>/<repo>/releases/download/<tag>/
 sed -E "s|^Filename: $STAGE/([^/]+/[^/]+)/([^/]+)/|Filename: https://github.com/\1/releases/download/\2/|" Packages > Packages.tmp && mv Packages.tmp Packages
+
+# Dedupe: drop later stanzas whose (Package, Version, Architecture) triple was
+# already seen. SOURCE_REPOS order decides the winner — first source wins.
+# Paragraph mode (RS="") reads one stanza per record; a stanza is dropped whole.
+awk '
+  BEGIN { RS="" }
+  {
+    pkg=""; ver=""; arch=""
+    n=split($0, lines, "\n")
+    for (i=1; i<=n; i++) {
+      if (lines[i] ~ /^Package: /)      pkg = substr(lines[i], 10)
+      else if (lines[i] ~ /^Version: /) ver = substr(lines[i], 10)
+      else if (lines[i] ~ /^Architecture: /) arch = substr(lines[i], 16)
+    }
+    key = pkg "\034" ver "\034" arch
+    if (!seen[key]++) { print; print "" }
+  }
+' Packages > Packages.tmp && mv Packages.tmp Packages
 
 # Inject depiction fields for packages with a depictions/ios/<id>.{json,html} file.
 # Sileo reads SileoDepiction (JSON), Cydia reads Depiction (HTML).
