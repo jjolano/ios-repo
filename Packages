@@ -1,3 +1,69 @@
+Package: me.jjolano.fmwk.hookkit
+Version: 2.2.5-1
+Architecture: iphoneos-arm64e
+Maintainer: jjolano
+Installed-Size: 17352
+Depends: firmware (>= 15.0)
+Conflicts: me.jjolano.hkmodule.dobby, me.jjolano.hkmodule.ellekit, me.jjolano.hkmodule.fishhook, me.jjolano.hkmodule.libhooker, me.jjolano.hkmodule.substitute, me.jjolano.hkmodule.substrate
+Replaces: me.jjolano.hkmodule.dobby, me.jjolano.hkmodule.ellekit, me.jjolano.hkmodule.fishhook, me.jjolano.hkmodule.libhooker, me.jjolano.hkmodule.substitute, me.jjolano.hkmodule.substrate
+Provides: me.jjolano.hkmodule.dobby, me.jjolano.hkmodule.ellekit, me.jjolano.hkmodule.fishhook, me.jjolano.hkmodule.libhooker, me.jjolano.hkmodule.substitute, me.jjolano.hkmodule.substrate
+Filename: https://github.com/jjolano/HookKit/releases/download/v2.2.5/me.jjolano.fmwk.hookkit_2.2.5-1_iphoneos-arm64e.deb
+Size: 1905404
+MD5sum: 5a33e14a9a7cca6f12b10327f29dae69
+SHA1: 408615ae290ea587bc0052444c802d2dc9383a31
+SHA256: 8517dd1e4ef63a805e3596eb314448d44b0d02b090bf0e96a4e453034a3b49ad
+Section: Development
+Description: An iOS developer framework for unified hooking methods.
+Depiction: https://ios.jjolano.me/depictions/ios/me.jjolano.fmwk.hookkit.html
+SileoDepiction: https://ios.jjolano.me/depictions/ios/me.jjolano.fmwk.hookkit.json
+Tag: role::developer
+Author: jjolano
+Name: HookKit Framework
+
+Package: me.jjolano.fmwk.hookkit
+Version: 2.2.5-1
+Architecture: iphoneos-arm64
+Maintainer: jjolano
+Installed-Size: 17336
+Depends: firmware (>= 9.0)
+Conflicts: me.jjolano.hkmodule.dobby, me.jjolano.hkmodule.ellekit, me.jjolano.hkmodule.fishhook, me.jjolano.hkmodule.libhooker, me.jjolano.hkmodule.substitute, me.jjolano.hkmodule.substrate
+Replaces: me.jjolano.hkmodule.dobby, me.jjolano.hkmodule.ellekit, me.jjolano.hkmodule.fishhook, me.jjolano.hkmodule.libhooker, me.jjolano.hkmodule.substitute, me.jjolano.hkmodule.substrate
+Provides: me.jjolano.hkmodule.dobby, me.jjolano.hkmodule.ellekit, me.jjolano.hkmodule.fishhook, me.jjolano.hkmodule.libhooker, me.jjolano.hkmodule.substitute, me.jjolano.hkmodule.substrate
+Filename: https://github.com/jjolano/HookKit/releases/download/v2.2.5/me.jjolano.fmwk.hookkit_2.2.5-1_iphoneos-arm64.deb
+Size: 1909102
+MD5sum: 7b9832c470526a4e311d800b2854bca8
+SHA1: b9e776ffbc3da153a591a721873c4a8efd5424c1
+SHA256: 756c2450db9c9d2939045a40680d6dcf31b2350f7baa2d5c2bc5ffe8bf7307b9
+Section: Development
+Description: An iOS developer framework for unified hooking methods.
+Depiction: https://ios.jjolano.me/depictions/ios/me.jjolano.fmwk.hookkit.html
+SileoDepiction: https://ios.jjolano.me/depictions/ios/me.jjolano.fmwk.hookkit.json
+Tag: role::developer
+Author: jjolano
+Name: HookKit Framework
+
+Package: me.jjolano.fmwk.hookkit
+Version: 2.2.5-1
+Architecture: iphoneos-arm
+Maintainer: jjolano
+Installed-Size: 18188
+Depends: firmware (>= 9.0)
+Conflicts: me.jjolano.hkmodule.dobby, me.jjolano.hkmodule.ellekit, me.jjolano.hkmodule.fishhook, me.jjolano.hkmodule.libhooker, me.jjolano.hkmodule.substitute, me.jjolano.hkmodule.substrate
+Replaces: me.jjolano.hkmodule.dobby, me.jjolano.hkmodule.ellekit, me.jjolano.hkmodule.fishhook, me.jjolano.hkmodule.libhooker, me.jjolano.hkmodule.substitute, me.jjolano.hkmodule.substrate
+Provides: me.jjolano.hkmodule.dobby, me.jjolano.hkmodule.ellekit, me.jjolano.hkmodule.fishhook, me.jjolano.hkmodule.libhooker, me.jjolano.hkmodule.substitute, me.jjolano.hkmodule.substrate
+Filename: https://github.com/jjolano/HookKit/releases/download/v2.2.5/me.jjolano.fmwk.hookkit_2.2.5-1_iphoneos-arm.deb
+Size: 2142574
+MD5sum: 67526a64680e812cb7da1f69f440938a
+SHA1: 520a909471cdc38f0ecdb59770bde513a6055242
+SHA256: b01585687710e8fd566bdd26ecfbb01ec749c491d3aed4cdb652c74486e1574f
+Section: Development
+Description: An iOS developer framework for unified hooking methods.
+Depiction: https://ios.jjolano.me/depictions/ios/me.jjolano.fmwk.hookkit.html
+SileoDepiction: https://ios.jjolano.me/depictions/ios/me.jjolano.fmwk.hookkit.json
+Tag: role::developer
+Author: jjolano
+Name: HookKit Framework
+
 Package: me.jjolano.shadow
 Version: 3.3.2
 Architecture: iphoneos-arm
