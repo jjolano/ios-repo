@@ -41,6 +41,9 @@ sed -E "s|^Filename: $STAGE/([^/]+/[^/]+)/([^/]+)/|Filename: https://github.com/
 # Dedupe: drop later stanzas whose (Package, Version, Architecture) triple was
 # already seen. SOURCE_REPOS order decides the winner — first source wins.
 # Paragraph mode (RS="") reads one stanza per record; a stanza is dropped whole.
+# Then sort stanzas canonically: dpkg-scanpackages leaves same-version stanzas
+# in directory-walk order, which varies per CI runner, so identical deb sets
+# would otherwise produce a different Packages each run (and a spurious commit).
 awk '
   BEGIN { RS="" }
   {
@@ -54,7 +57,14 @@ awk '
     key = pkg "\034" ver "\034" arch
     if (!seen[key]++) { print; print "" }
   }
-' Packages > Packages.tmp && mv Packages.tmp Packages
+' Packages \
+  | awk 'BEGIN { RS=""; ORS="" }
+         { gsub(/\n/, "\001", $0); print $0 "\n" }' \
+  | LC_ALL=C sort \
+  | awk 'BEGIN { n = 0 }
+         { if (n++ && $0 ~ /^Package: /) print ""; print }' \
+  | tr '\001' '\n' \
+  > Packages.tmp && mv Packages.tmp Packages
 
 # Inject depiction fields for packages with a depictions/ios/<id>.{json,html} file.
 # Sileo reads SileoDepiction (JSON), Cydia reads Depiction (HTML).
@@ -91,9 +101,10 @@ STAMP=$(date -u +%Y-%m-%dT%H:%M:%SZ)
 sed -i "s|\(>Last updated <span id=\"last-updated\">\)[^<]*\(</span>\)|\1$STAMP\2|" index.html
 
 # Only commit if something meaningful changed. Release always differs (fresh
-# Date/checksums), so only Packages* and index.html count as meaningful.
+# Date/checksums) and index.html carries a fresh timestamp every run, so only
+# the canonical Packages (deterministic for identical deb sets) is meaningful.
 git add Packages Packages.bz2 Packages.gz Packages.lzma Packages.xz Packages.zst Release update.sh index.html
-if git diff --cached --quiet HEAD -- Packages Packages.bz2 Packages.gz Packages.lzma Packages.xz Packages.zst index.html; then
+if git diff --cached --quiet HEAD -- Packages; then
   echo "no meaningful change; skipping commit"
 else
   git commit -m "update repo"
