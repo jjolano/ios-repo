@@ -25,6 +25,291 @@
           "openExternal": true
         }
       ]
+    },
+    {
+      "class": "DepictionStackView",
+      "tabname": "Changelog",
+      "views": [
+        {
+          "class": "DepictionSubheaderView",
+          "title": "3.7.6",
+          "subtitle": "2023-05-30"
+        },
+        {
+          "class": "DepictionMarkdownView",
+          "markdown": "Some quick fixes for certain jailbreak-related apps to prevent Shadow from loading and interfering with functionality.\r\n\r\n- Arabic translation updated\r\n- Quick workaround against iOSSecuritySuite v1.9.7 for now"
+        },
+        {
+          "class": "DepictionSubheaderView",
+          "title": "3.7.5",
+          "subtitle": "2023-05-21"
+        },
+        {
+          "class": "DepictionMarkdownView",
+          "markdown": "Undo preference changes in 3.7.4 for rootless."
+        },
+        {
+          "class": "DepictionSubheaderView",
+          "title": "3.7.4",
+          "subtitle": "2023-05-20"
+        },
+        {
+          "class": "DepictionMarkdownView",
+          "markdown": "This release improves several hook implementations, and improves handling of certain cases.\r\n\r\n- Rootless-specific logic has been improved\r\n- File System and Environment Variables hooks improved\r\n- Class hooks adjusted\r\n- Initialization logic adjusted"
+        },
+        {
+          "class": "DepictionSubheaderView",
+          "title": "3.7.3",
+          "subtitle": "2023-04-08"
+        },
+        {
+          "class": "DepictionMarkdownView",
+          "markdown": "This is a quick update to fix codesigning issues on iOS 15+ jailbreaks (#125)."
+        },
+        {
+          "class": "DepictionSubheaderView",
+          "title": "3.7.2",
+          "subtitle": "2023-04-01"
+        },
+        {
+          "class": "DepictionMarkdownView",
+          "markdown": "This release partially reverts some database generation behaviour, and small adjustments related to Fugu15 Max.\r\n\r\n- Added `RootBridge Framework`. This framework allows Shadow to function on both rooted and rootless jailbreaks."
+        },
+        {
+          "class": "DepictionSubheaderView",
+          "title": "3.7.1",
+          "subtitle": "2023-03-28"
+        },
+        {
+          "class": "DepictionMarkdownView",
+          "markdown": "This release features a rewrite of the core Shadow codebase, and is designed with rootless jailbreaks in mind. This will likely be the last version 3 release, as version 4 will migrate to using the Modulous framework and focus more on bypass strength improvement.\r\n\r\n- Default Hooking Library set to fishhook (if installed)\r\n- dpkg database size minimized to improve general performance and memory usage\r\n\r\nSome changes for the repo:\r\n\r\n- Added rootless support, with rootless builds of Shadow and dependencies.\r\n- Shadow (dev) build package will be joined in the future with the main Shadow package, this will be accessible by using the Downgrade option in your package manager."
+        },
+        {
+          "class": "DepictionSubheaderView",
+          "title": "3.6.9-2",
+          "subtitle": "2023-03-04"
+        },
+        {
+          "class": "DepictionMarkdownView",
+          "markdown": "This release prepares for the new HookKit Framework API, and fixes a potential crash when using Cydia Substrate as the hooking library.\r\n\r\nThe upcoming version 3.7.x of Shadow will migrate to using the Modulous Framework for its hooks. This is more of a backend change, but it will pave the way for overall better code quality. **Edit: This migration will be in version 4 of Shadow, as the change will require reconfiguration of settings.**"
+        },
+        {
+          "class": "DepictionSubheaderView",
+          "title": "3.6.8",
+          "subtitle": "2023-02-21"
+        },
+        {
+          "class": "DepictionMarkdownView",
+          "markdown": "This release fixes certain crashes related to Shadow's internal logic, and enables potential performance improvements from multithreaded operations.\r\n\r\n- Fixed `shdw` utility not working properly in 3.6.7\r\n- Fixed some rare detection regressions in 3.6.7\r\n- Improved rootless check\r\n- Improved `Environment Variables` handling\r\n- Improved `Foundation` hooks\r\n- Updated standard rulesets"
+        },
+        {
+          "class": "DepictionSubheaderView",
+          "title": "3.6.7",
+          "subtitle": "2023-02-14"
+        },
+        {
+          "class": "DepictionMarkdownView",
+          "markdown": "This version features performance improvements.\r\n\r\n- Removed `Rootless Optimizations` option. Rootless jailbreaks are now automatically detected by Shadow.\r\n- Refactored/rewrote most `File System` hooks for better performance.\r\n- Improved `Dynamic Libraries` hooks."
+        },
+        {
+          "class": "DepictionSubheaderView",
+          "title": "3.6.6",
+          "subtitle": "2023-02-13"
+        },
+        {
+          "class": "DepictionMarkdownView",
+          "markdown": "3.6.6: Quick fix for certain apps crashing.\r\n\r\n3.6.5: This version addresses detection regressions from 3.6.4 as well as further performance improvement. Additional preparations were also made behind the scenes for rootless jailbreaks.\r\n\r\nOther changes:\r\n\r\n- `Enable Rootless Mode` is now called `Rootless Optimization`\r\n- `Enhanced Path Processing` option has been removed\r\n- `Allow Tweak Resources` option has been removed"
+        },
+        {
+          "class": "DepictionSubheaderView",
+          "title": "3.6.5",
+          "subtitle": "2023-02-12"
+        },
+        {
+          "class": "DepictionMarkdownView",
+          "markdown": "This version addresses detection regressions from 3.6.4 as well as further performance improvement. Additional preparations were also made behind the scenes for rootless jailbreaks.\r\n\r\nOther changes:\r\n\r\n- `Enable Rootless Mode` is now called `Rootless Optimization`\r\n- `Enhanced Path Processing` option has been removed\r\n- `Allow Tweak Resources` option has been removed"
+        },
+        {
+          "class": "DepictionSubheaderView",
+          "title": "3.6.4",
+          "subtitle": "2023-02-03"
+        },
+        {
+          "class": "DepictionMarkdownView",
+          "markdown": "This release contains another fix for crashes and regressions in detection.\r\n\r\nNote: it seems there are still some detection regressions - likely related to the performance improvements. If you are having detection issues since updating, please use 3.6.1 or the beta (this may be unstable) as this is being worked on."
+        },
+        {
+          "class": "DepictionSubheaderView",
+          "title": "3.6.3",
+          "subtitle": "2023-02-02"
+        },
+        {
+          "class": "DepictionMarkdownView",
+          "markdown": "This release includes some minor adjustments to prevent some crashes from 3.6.2.\r\n\r\nv3.6.2 release notes copied:\r\n\r\nThis release features a major general performance improvement, as well as some tweak compatibility improvements.\r\n\r\n- Reimplemented some previously disabled hooks\r\n- Adjusted some function calls to be safer\r\n- Reverted injection changes from 3.6.0 for stability reasons\r\n- Significant load time improvement for Shadow-enabled apps\r\n- Further reorganization of codebase\r\n- Updated Arabic translations\r\n- Added Simplified Chinese translation\r\n\r\nDue to tweak compatibility improvements, Allow Tweak Resources is now deprecated. Please let me know if this option is still necessary."
+        },
+        {
+          "class": "DepictionSubheaderView",
+          "title": "3.6.2",
+          "subtitle": "2023-02-02"
+        },
+        {
+          "class": "DepictionMarkdownView",
+          "markdown": "This release features a major general performance improvement, as well as some tweak compatibility improvements.\r\n\r\n- Reimplemented some previously disabled hooks\r\n- Adjusted some function calls to be safer\r\n- Reverted injection changes from 3.6.0 for stability reasons\r\n- **Significant** load time improvement for Shadow-enabled apps\r\n- Further reorganization of codebase\r\n- Updated Arabic translations\r\n- Added Simplified Chinese translation by @NeHyci \r\n\r\nDue to tweak compatibility improvements, `Allow Tweak Resources` is now deprecated. Please let me know if this option is still necessary."
+        },
+        {
+          "class": "DepictionSubheaderView",
+          "title": "3.6.1",
+          "subtitle": "2023-01-25"
+        },
+        {
+          "class": "DepictionMarkdownView",
+          "markdown": "This release implements some backend changes for Shadow.\r\n\r\n- Reorganized codebase, and moved internal API into its own framework. (fixes #92)\r\n- Improved restriction logic for rare special cases\r\n- Removed arbitrary version numbers from About\r\n- Added Arabic translation by @dhd111 \r\n- Adjustments to `Enforce App Sandbox`"
+        },
+        {
+          "class": "DepictionSubheaderView",
+          "title": "3.6.0",
+          "subtitle": "2023-01-23"
+        },
+        {
+          "class": "DepictionMarkdownView",
+          "markdown": "This release provides several general improvements to Shadow.\r\n\r\n- Improved tweak performance for Shadow-enabled apps: app launch, general app performance.\r\n- Optimized several hooks.\r\n- Optimized internal restriction logic.\r\n- Fixed a small flaw in restriction logic involving certain pathnames.\r\n- Fixed some non-working `Foundation Framework` hooks.\r\n- Fixed `dlopen` hook for certain iOS versions.\r\n- Cleaned up preferences, merged some hooks to compact options.\r\n- Added new option `Enhance Path Processing`\r\n- Adjusted Shadow's injection to ensure tweak injection into certain apps, and hard-exclude injection from certain apps.\r\n- Adjusted applications list to exclude Apple apps.\r\n- Shadow will now detect whenever packages are installed and adjust rulesets accordingly.\r\n\r\nSpecial thank you to contributors and Ko-fi donors (much cups were had while developing the tweak). If you would like to translate Shadow, please refer to the English translation within the source code on GitHub."
+        },
+        {
+          "class": "DepictionSubheaderView",
+          "title": "3.5.6-4+debug",
+          "subtitle": "2023-01-09"
+        },
+        {
+          "class": "DepictionMarkdownView",
+          "markdown": "- Slightly adjusted some hooks for better reliability\r\n- Added link in About page to releases page (for viewing changes)\r\n- Updated ruleset to prevent apps from detecting if they were installed with TrollStore (note: this causes TrollStore to not detect installed apps, so ensure Shadow is not enabled there)\r\n\r\n**Debug build has been added to this release. It only enables logging to console.**"
+        },
+        {
+          "class": "DepictionSubheaderView",
+          "title": "3.5.6",
+          "subtitle": "2023-01-09"
+        },
+        {
+          "class": "DepictionMarkdownView",
+          "markdown": "- Slightly adjusted some hooks for better reliability\r\n- Added link in About page to releases page (for viewing changes)\r\n- Updated ruleset to prevent apps from detecting if they were installed with TrollStore (note: this causes TrollStore to not detect installed apps, so ensure Shadow is not enabled there)\r\n\r\n**Debug build has been added to this release. It only enables logging to console.**"
+        },
+        {
+          "class": "DepictionSubheaderView",
+          "title": "3.5.5",
+          "subtitle": "2023-01-08"
+        },
+        {
+          "class": "DepictionMarkdownView",
+          "markdown": "This update requires at least version 0.1.5 of HookKit Framework to fix certain issues with fishhook."
+        },
+        {
+          "class": "DepictionSubheaderView",
+          "title": "3.5.4-2",
+          "subtitle": "2023-01-08"
+        },
+        {
+          "class": "DepictionMarkdownView",
+          "markdown": "- Added translation support for preferences\r\n- Added Chinese translation by @CySxL\r\n- Slight adjustment to internal library linking for rootless jailbreaks"
+        },
+        {
+          "class": "DepictionSubheaderView",
+          "title": "3.5.3",
+          "subtitle": "2023-01-07"
+        },
+        {
+          "class": "DepictionMarkdownView",
+          "markdown": "- Updated HookKit API. This requires HookKit Framework to be updated to version 0.1 - this update is also incompatible with previous Shadow versions.\r\n- No other changes."
+        },
+        {
+          "class": "DepictionSubheaderView",
+          "title": "3.5.2",
+          "subtitle": "2023-01-05"
+        },
+        {
+          "class": "DepictionMarkdownView",
+          "markdown": "- Split Standard Rules ruleset to separate jailbreak files from standard iOS file structure\r\n- Fixed a tweak conflict causing the copy and paste function to not work"
+        },
+        {
+          "class": "DepictionSubheaderView",
+          "title": "3.5.1",
+          "subtitle": "2023-01-02"
+        },
+        {
+          "class": "DepictionMarkdownView",
+          "markdown": "- Added a new Extra hook: App Enumeration\r\n- Updated standard ruleset\r\n- Slight adjustments to initialization and hooking code\r\n- Application list in preferences has been updated with alphabetical organization and scrolling.\r\n- Application list in preferences now shows \"Enabled\" for apps where Shadow is enabled."
+        },
+        {
+          "class": "DepictionSubheaderView",
+          "title": "3.5-1",
+          "subtitle": "2022-12-31"
+        },
+        {
+          "class": "DepictionMarkdownView",
+          "markdown": "This release features some significant changes to Shadow's code base.\r\n\r\n- Restriction logic has been fully migrated to a ruleset-based system. Users/Developers can now create their own ruleset in `/Library/Shadow/rulesets` to further enhance Shadow. Support for custom rulesets will be limited, however.\r\n- Preference pages have been adjusted. Please check your settings.\r\n- Improved support for rootless jailbreaks.\r\n- Added my [HookKit Framework](https://github.com/jjolano/HookKit) as a new dependency. In addition to performance improvements, this allows users to change hooking methods which can potentially evade certain detection methods."
+        },
+        {
+          "class": "DepictionSubheaderView",
+          "title": "3.4.1",
+          "subtitle": "2022-12-12"
+        },
+        {
+          "class": "DepictionMarkdownView",
+          "markdown": "- Fixed a regression in 3.4 causing slower userspace reboots\r\n- Rearranged bypass options.\r\n- Adjusted restricted paths."
+        },
+        {
+          "class": "DepictionSubheaderView",
+          "title": "3.4",
+          "subtitle": "2022-12-10"
+        },
+        {
+          "class": "DepictionMarkdownView",
+          "markdown": "- Cleaned up some restriction logic code\r\n- Adjusted rootless paths for Xina\r\n- Added new Extra hook: Hide Executable Memory\r\n- Added new `shdw` command line utility for testing file path restrictions"
+        },
+        {
+          "class": "DepictionSubheaderView",
+          "title": "3.3.7",
+          "subtitle": "2022-12-08"
+        },
+        {
+          "class": "DepictionMarkdownView",
+          "markdown": "- Fixed URL scheme hook specifically for unc0ver jailbreaks"
+        },
+        {
+          "class": "DepictionSubheaderView",
+          "title": "3.3.6",
+          "subtitle": "2022-12-07"
+        },
+        {
+          "class": "DepictionMarkdownView",
+          "markdown": "- More rare crash fixes\r\n- Handle rootless paths better (untested)\r\n- Add more Enforce Sandbox hooks\r\n- Fixed a typo causing the Shadow Service setting to not work properly\r\n- Improve Shadow Service fallback"
+        },
+        {
+          "class": "DepictionSubheaderView",
+          "title": "3.3.5",
+          "subtitle": "2022-12-03"
+        },
+        {
+          "class": "DepictionMarkdownView",
+          "markdown": "- Rearranged Loaded Modules hook to provide barebones functionality\r\n- Rewrote Environment Variables hook to prevent a very rare crash"
+        },
+        {
+          "class": "DepictionSubheaderView",
+          "title": "3.3.4",
+          "subtitle": "2022-12-02"
+        },
+        {
+          "class": "DepictionMarkdownView",
+          "markdown": "- Fixes a rare crash with Runtime Symbol Lookups\r\n- Added additional skip hooks to Detection Frameworks"
+        },
+        {
+          "class": "DepictionSubheaderView",
+          "title": "3.3.2",
+          "subtitle": "2022-11-30"
+        },
+        {
+          "class": "DepictionMarkdownView",
+          "markdown": "- I am now able to test on Substitute + palera1n.\r\n- Adjusted Runtime Class Lookups and Enforce Sandbox hooks to prevent crashes for Substitute users\r\n- Further performance improvements."
+        }
+      ]
     }
   ]
 }

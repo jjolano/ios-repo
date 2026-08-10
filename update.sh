@@ -8,11 +8,17 @@ rm -rf "$STAGE" && mkdir -p "$STAGE"
 # Order matters: project repos first so they win the dedupe below.
 SOURCE_REPOS="jjolano/HookKit jjolano/Shadow jjolano/ios-repo"
 
+: > "$STAGE/releases.ndjson"
 for repo in $SOURCE_REPOS; do
   for tag in $(gh release list -R "$repo" --json tagName -q '.[].tagName'); do
     # skip releases with no .deb assets (e.g. source-only releases)
-    total=$(gh release view "$tag" -R "$repo" --json assets -q '[.assets[] | select(.name | endswith(".deb"))] | length')
+    meta=$(gh release view "$tag" -R "$repo" --json tagName,publishedAt,body,assets)
+    total=$(printf '%s' "$meta" | jq -r '[.assets[] | select(.name | endswith(".deb"))] | length')
     [ "$total" -gt 0 ] || continue
+    # keep release metadata (publishedAt, notes) for the Changelog depiction tab
+    printf '%s' "$meta" | jq -c --arg repo "$repo" \
+      '{repo: $repo, tag: .tagName, publishedAt: .publishedAt, body: .body}' \
+      >> "$STAGE/releases.ndjson"
     mkdir -p "$STAGE/$repo/$tag"
     gh release download "$tag" -R "$repo" --dir "$STAGE/$repo/$tag" --pattern '*.deb'
     # guard: every release must yield its .deb assets; a partial download means
@@ -79,6 +85,54 @@ for f in depictions/ios/*.json; do
   ' Packages > Packages.tmp && mv Packages.tmp Packages
 done
 
+# Generate a Changelog tab in each depiction from source release notes. Map
+# each stanza back to the release it came from via its Filename URL, join with
+# the release metadata collected above, and rebuild the tab. Deterministic for
+# a given release set (sorted by date/version, stable jq output), so unchanged
+# releases churn nothing. Packages without notes (or without stanzas) are left
+# untouched — including Cydia users' HTML depictions.
+awk '
+  BEGIN { RS="" }
+  {
+    pkg=""; ver=""; file=""
+    n=split($0, lines, "\n")
+    for (i=1; i<=n; i++) {
+      if (lines[i] ~ /^Package: /)       pkg  = substr(lines[i], 10)
+      else if (lines[i] ~ /^Version: /)  ver  = substr(lines[i], 10)
+      else if (lines[i] ~ /^Filename: /) file = substr(lines[i], 11)
+    }
+    if (file ~ /^https:\/\/github\.com\/[^/]+\/[^/]+\/releases\/download\/[^/]+\//) {
+      repo = file; sub(/\/releases\/download\/.*/, "", repo); sub(/^https:\/\/github\.com\//, "", repo)
+      tag  = file; sub(/^https:\/\/github\.com\/[^/]+\/[^/]+\/releases\/download\//, "", tag); sub(/\/.*/, "", tag)
+      printf "{\"pkg\":\"%s\",\"ver\":\"%s\",\"repo\":\"%s\",\"tag\":\"%s\"}\n", pkg, ver, repo, tag
+    }
+  }
+' Packages > "$STAGE/stanzas.ndjson"
+
+for depic in depictions/ios/*.json; do
+  [ -e "$depic" ] || continue
+  id=$(basename "$depic" .json)
+  jq -n --slurpfile stanzas "$STAGE/stanzas.ndjson" --slurpfile rels "$STAGE/releases.ndjson" \
+    --arg id "$id" '
+      [ $stanzas[] | select(.pkg == $id) | . as $s |
+        ($rels[] | select(.repo == $s.repo and .tag == $s.tag)) as $r |
+        {ver: $s.ver, date: $r.publishedAt[0:10], body: $r.body} ]
+      | unique_by(.ver)
+      | map(select((.body // "") != ""))
+      | sort_by(.date, .ver) | reverse as $entries |
+      if ($entries | length) == 0 then empty
+      else
+        $entries | map([ {class: "DepictionSubheaderView", title: .ver, subtitle: .date},
+                         {class: "DepictionMarkdownView", markdown: .body} ])
+        | add
+        | {class: "DepictionStackView", tabname: "Changelog", views: .}
+      end' > "$STAGE/changelog.json" || continue
+  [ -s "$STAGE/changelog.json" ] || continue
+  jq --slurpfile tab "$STAGE/changelog.json" '
+    .tabs |= (map(select(.tabname != "Changelog")) + $tab)' \
+    "$depic" > "$depic.tmp" && mv "$depic.tmp" "$depic"
+done
+
 cat Packages | xz > Packages.xz
 cat Packages | bzip2 > Packages.bz2
 cat Packages | gzip > Packages.gz
@@ -102,9 +156,10 @@ sed -i "s|\(>Last updated <span id=\"last-updated\">\)[^<]*\(</span>\)|\1$STAMP\
 
 # Only commit if something meaningful changed. Release always differs (fresh
 # Date/checksums) and index.html carries a fresh timestamp every run, so only
-# the canonical Packages (deterministic for identical deb sets) is meaningful.
-git add Packages Packages.bz2 Packages.gz Packages.lzma Packages.xz Packages.zst Release update.sh index.html
-if git diff --cached --quiet HEAD -- Packages; then
+# the canonical Packages (deterministic for identical deb sets) and the
+# regenerated depictions (release notes) are meaningful.
+git add Packages Packages.bz2 Packages.gz Packages.lzma Packages.xz Packages.zst Release update.sh index.html depictions/ios/*.json
+if git diff --cached --quiet HEAD -- Packages depictions/ios/*.json; then
   echo "no meaningful change; skipping commit"
 else
   git commit -m "update repo"

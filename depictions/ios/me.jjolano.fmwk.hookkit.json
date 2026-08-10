@@ -25,6 +25,21 @@
           "openExternal": true
         }
       ]
+    },
+    {
+      "class": "DepictionStackView",
+      "tabname": "Changelog",
+      "views": [
+        {
+          "class": "DepictionSubheaderView",
+          "title": "2.2.5-1",
+          "subtitle": "2026-08-10"
+        },
+        {
+          "class": "DepictionMarkdownView",
+          "markdown": "Fix the batch deferred-original crash that broke v1-era consumers (e.g. Shadow 3.7.6) against HookKit v2.\n\n**The bug:** HookKit v2's batched installs wrote originals into the caller's %orig cells only after the *entire* batch drain returned. A replacement installed earlier in the same batch was live while its %orig cell was still NULL — so any mid-batch re-entry into it (ElleKit's patch writer calls vm_region_recurse_64, which Shadow's Hook_Memory group hooks) called NULL and crashed (SIGSEGV at PC 0, reproduced on-device in 4/4 apps at launch). v1 never hit this: caller cells were the libhooker out-pointers, so each original published the moment its hook applied.\n\n**The fix:** publish originals at apply time (v1 semantics) — batched function hooks use the caller's cell as the out-pointer (batch-owned cell as fallback), message-hook originals are written immediately, and origValue is synced afterward so the drain's non-NULL invariant and inline-guard settlement still see the real original. On-device verified: Shadow 3.7.6 launches the previously crashing apps cleanly.\n\nAlso in this tag (2.2.4-1 + 2.2.5-1 since 2.2.3-1):\n- ElleKit ABI detection reverted to the tested filename discriminator (LHStrError is exported by both ElleKit and real libhooker, so symbol cross-checks fail closed against legitimate ElleKit installs)\n- litehook: global-rebind list index fix (underflow on first insert, overwrite on later inserts)\n- Availability introspection restores the compile-time backends (fishhook/litehook/native/dobby/swift) to getAvailableSubstitutorTypes/getAvailableCategories\n\nPackages: iphoneos-arm (rooted), iphoneos-arm64 (rootless), iphoneos-arm64e (roothide)."
+        }
+      ]
     }
   ]
 }
