@@ -1,0 +1,16 @@
+name: test page
+on:
+  push:
+    branches: [release]
+  pull_request:
+  workflow_dispatch:
+
+# Reports only — deliberately not a dependency of update-repo/poll-sources, so a
+# failure here can never stop the index from publishing.
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Check index.html renders the live index
+        run: node test-index.mjs
