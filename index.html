@@ -444,7 +444,10 @@
 
 </div>
 
-<script>
+<!-- data-cfasync: opt out of Cloudflare Rocket Loader, which otherwise retypes
+     this tag and defers it through its own loader. It is 3KB at the end of body
+     and needs no help; going through Rocket Loader is only added risk. -->
+<script data-cfasync="false">
 // Re-renders the package section from the live index, so this page cannot drift
 // from what the repo actually serves. The static cards above are the no-JS floor:
 // if any fetch fails they are left exactly as they are.

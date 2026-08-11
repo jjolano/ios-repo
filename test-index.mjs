@@ -8,7 +8,11 @@ import { readFileSync, existsSync } from "node:fs";
 import assert from "node:assert";
 
 const REPO = new URL(".", import.meta.url).pathname.replace(/\/$/, "");
-const code = readFileSync(`${REPO}/index.html`, "utf8").match(/<script>([\s\S]*?)<\/script>/)[1];
+// Match on content, not position: a proxy (Cloudflare Rocket Loader) may retype
+// the tag or inject scripts of its own around ours.
+const code = [...readFileSync(`${REPO}/index.html`, "utf8").matchAll(/<script\b[^>]*>([\s\S]*?)<\/script>/g)]
+  .map((m) => m[1]).find((s) => s.includes("pkg-grid"));
+assert.ok(code, "index.html carries the package-rendering script");
 
 // Minimal DOM: enough for the script's getElementById / querySelector / innerHTML.
 function run(serve) {
