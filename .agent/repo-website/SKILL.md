@@ -32,10 +32,10 @@ The landing page is a single self-contained `index.html` (inline CSS, no build s
 3. **Visual/UX redesign**: delegate to @designer with the current index.html + ground truth (package list, variants, deep links). After designer work, review the copy yourself — designer copy can be weak or invent facts; check every description against `Packages` and fix without changing visual intent.
 4. **Known accuracy traps** (from past reviews):
    - Package managers (Zebra/Sileo/Cydia) are NOT arch-specific — don't tag buttons with arches.
-   - Not everything supports all three variants: only current HookKit 2.x and Shadow 4.x ship roothide (iphoneos-arm64e); modulous, rootbridge, hkmodules, shadow.legacy, sileorespring are rootful/rootless only. Say "current packages cover all three; older ones rootful/rootless" — don't overclaim.
+   - Not everything supports all three variants: HookKit ships roothide (iphoneos-arm64e), Shadow is rootful/rootless only. Check `Architecture:` per package before claiming — don't overclaim.
    - Roothide = rootless-style layout that *hides the jailbreak from apps* — not just "keeps rootfs intact".
    - Don't claim packages are "signed" — there is no Release.gpg. Say "hosted via GitHub Releases and Pages".
-   - sileorespring has no public source repo — don't claim everything is on GitHub.
+   - The repo serves exactly two packages: `me.jjolano.fmwk.hookkit` and `me.jjolano.shadow`. The `legacy` release (modulous, rootbridge, hkmodules, shadow.legacy, sileorespring) was deleted on 2026-08-10 and those debs are gone — never re-add them to the page.
 5. **Ship**:
    ```sh
    git add index.html && git commit -m "<what changed>" && git push origin release

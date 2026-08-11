@@ -6,10 +6,11 @@ rm -rf "$STAGE" && mkdir -p "$STAGE"
 # Source repos that publish .deb releases for this apt repo.
 # Format: "owner/repo" — debs are pulled from each repo's releases.
 # Order matters: project repos first so they win the dedupe below.
-SOURCE_REPOS="jjolano/HookKit jjolano/Shadow jjolano/ios-repo"
+SOURCE_REPOS="jjolano/HookKit jjolano/Shadow"
 
 : > "$STAGE/releases.ndjson"
 for repo in $SOURCE_REPOS; do
+  found=0
   for tag in $(gh release list -R "$repo" --json tagName -q '.[].tagName'); do
     # skip releases with no .deb assets (e.g. source-only releases)
     meta=$(gh release view "$tag" -R "$repo" --json tagName,publishedAt,body,assets)
@@ -25,7 +26,13 @@ for repo in $SOURCE_REPOS; do
     # a degraded index — abort instead of publishing one.
     got=$(ls "$STAGE/$repo/$tag"/*.deb 2>/dev/null | wc -l)
     [ "$got" -eq "$total" ] || { echo "error: $repo $tag: expected $total debs, downloaded $got" >&2; exit 1; }
+    found=$((found + total))
   done
+  # guard: a listed source repo yielding nothing means its release list came back
+  # empty — a transient API or auth failure, not a deliberate prune. Publishing
+  # then would silently drop every package that repo provides. Pruning versions
+  # is fine; a repo going to zero is not. Drop it from SOURCE_REPOS to retire it.
+  [ "$found" -gt 0 ] || { echo "error: $repo: no releases with .deb assets" >&2; exit 1; }
 done
 
 # guard: abort if nothing was downloaded
@@ -150,15 +157,11 @@ apt-ftparchive\
  -o APT::FTPArchive::Release::Description="personal tweak repository"\
  release . > Release
 
-# stamp the website footer with the index update time (UTC, ISO)
-STAMP=$(date -u +%Y-%m-%dT%H:%M:%SZ)
-sed -i "s|\(>Last updated <span id=\"last-updated\">\)[^<]*\(</span>\)|\1$STAMP\2|" index.html
-
 # Only commit if something meaningful changed. Release always differs (fresh
-# Date/checksums) and index.html carries a fresh timestamp every run, so only
-# the canonical Packages (deterministic for identical deb sets) and the
-# regenerated depictions (release notes) are meaningful.
-git add Packages Packages.bz2 Packages.gz Packages.lzma Packages.xz Packages.zst Release update.sh index.html depictions/ios/*.json
+# Date/checksums), so only the canonical Packages (deterministic for identical
+# deb sets) and the regenerated depictions (release notes) are meaningful.
+# index.html is not touched here — it reads Packages and Release in the browser.
+git add Packages Packages.bz2 Packages.gz Packages.lzma Packages.xz Packages.zst Release update.sh depictions/ios/*.json
 if git diff --cached --quiet HEAD -- Packages depictions/ios/*.json; then
   echo "no meaningful change; skipping commit"
 else

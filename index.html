@@ -240,22 +240,47 @@
   }
   .src-link:hover, .src-link:focus-visible { text-decoration: underline; }
 
-  /* ---- secondary package list ---- */
-  .pkg-more {
-    list-style: none;
+  /* ---- live package data (rendered from /Packages) ---- */
+  .pkg-ver {
+    font: 600 12px/1.6 var(--mono);
+    color: var(--accent);
+  }
+
+  a.chip {
+    text-decoration: none;
+    transition: border-color .18s, color .18s;
+  }
+  a.chip:hover, a.chip:focus-visible {
+    border-color: var(--accent);
+    color: var(--text);
+    outline: none;
+  }
+
+  .pkg-changelog {
     margin: 14px 0 0;
-    padding: 4px 0 0;
+    padding-top: 11px;
     border-top: 1px solid var(--line);
     font-size: .9rem;
-    color: var(--muted);
   }
-  .pkg-more li { padding: 7px 2px; }
-  .pkg-more b { color: var(--text); font-weight: 600; }
-  .pkg-more code {
-    font: 11.5px/1.5 var(--mono);
+  .pkg-changelog summary {
+    cursor: pointer;
+    font-weight: 600;
     color: var(--muted);
-    overflow-wrap: anywhere;
+    list-style: none;
   }
+  .pkg-changelog summary::-webkit-details-marker { display: none; }
+  .pkg-changelog summary::before {
+    content: "› ";
+    display: inline-block;
+    color: var(--accent);
+    transition: transform .18s;
+  }
+  .pkg-changelog[open] summary::before { transform: rotate(90deg); }
+  .pkg-changelog summary:hover, .pkg-changelog summary:focus-visible { color: var(--text); }
+  .pkg-changelog p { margin: 10px 0 0; color: var(--muted); }
+  .pkg-changelog ul { margin: 9px 0 0; padding-left: 18px; color: var(--muted); }
+  .pkg-changelog li { margin: 3px 0; }
+  .pkg-changelog code { font: 11.5px/1.5 var(--mono); color: var(--accent); }
 
   /* ---- footer ---- */
   footer {
@@ -356,7 +381,7 @@
 
     <section class="reveal" aria-labelledby="variants-heading">
       <h2 id="variants-heading">Supported variants</h2>
-      <p class="section-note">Packages are built for the architectures your jailbreak uses. Current packages (HookKit 2.x, Shadow 4.x) cover all three; older ones are rootful/rootless only.</p>
+      <p class="section-note">Packages are built for the architectures your jailbreak uses. Each package below lists the variants it ships.</p>
       <ul class="variants">
         <li>
           <b>Rootful</b>
@@ -378,8 +403,8 @@
 
     <section class="reveal" aria-labelledby="packages-heading">
       <h2 id="packages-heading">Packages</h2>
-      <p class="section-note">The repo's highlights. Sources are on GitHub.</p>
-      <div class="pkg-grid">
+      <p class="section-note" id="pkg-note">Everything this repo serves. Sources are on GitHub.</p>
+      <div class="pkg-grid" id="pkg-grid">
         <article class="pkg">
           <div class="pkg-head">
             <h3>HookKit Framework</h3>
@@ -402,29 +427,140 @@
           <div class="pkg-foot">
             <span class="chip"><b>rootful</b></span>
             <span class="chip"><b>rootless</b></span>
-            <span class="chip"><b>roothide</b></span>
             <a class="src-link" href="https://github.com/jjolano/Shadow">Source ↗</a>
           </div>
         </article>
       </div>
-      <ul class="pkg-more">
-        <li><b>Modulous Framework</b> <code>me.jjolano.fmwk.modulous</code> — framework for modular software.</li>
-        <li><b>RootBridge Framework</b> <code>me.jjolano.fmwk.rootbridge</code> — developer framework for rootless tweak development.</li>
-        <li><b>HookKit Modules</b> — Dobby, ElleKit, fishhook, libhooker, Substitute, and Cydia Substrate backends for HookKit 1.x (bundled into HookKit 2.x).</li>
-        <li><b>Shadow (legacy)</b> <code>me.jjolano.shadow.legacy</code> — Shadow v2 for iOS 8–14, unsupported.</li>
-        <li><b>Sileo Respring</b> <code>me.jjolano.sileorespring</code> — shows a Restart SpringBoard button in Sileo (rootful only).</li>
-      </ul>
     </section>
   </main>
 
   <footer class="reveal">
     <div class="foot-row">
       <span>Packages hosted via GitHub Releases and Pages.</span>
-      <span>Last updated <span id="last-updated">2026-08-10T21:55:26Z</span></span>
+      <span id="updated" hidden>Index updated <time id="last-updated"></time></span>
       <span><a href="https://github.com/jjolano">github.com/jjolano</a></span>
     </div>
   </footer>
 
 </div>
+
+<script>
+// Re-renders the package section from the live index, so this page cannot drift
+// from what the repo actually serves. The static cards above are the no-JS floor:
+// if any fetch fails they are left exactly as they are.
+(() => {
+  const ORDER = ["iphoneos-arm", "iphoneos-arm64", "iphoneos-arm64e"];
+  const LABEL = { "iphoneos-arm": "rootful", "iphoneos-arm64": "rootless", "iphoneos-arm64e": "roothide" };
+
+  const esc = s => String(s).replace(/[&<>"]/g, c => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" }[c]));
+  const size = n => n >= 1048576 ? (n / 1048576).toFixed(1) + " MB" : Math.round(n / 1024) + " KB";
+
+  // ponytail: numeric collation, not dpkg version semantics — correct for
+  // 3.7.6 / 3.6.9-2 / 2.2.5-1, wrong for epochs (1:2.0) and ~rc suffixes.
+  // Swap in a real comparator only if a version ever sorts wrong.
+  const newestFirst = (a, b) => b.Version.localeCompare(a.Version, undefined, { numeric: true });
+
+  // One stanza per blank-line-separated block. Continuation lines (leading space,
+  // e.g. the rest of a long Description) aren't needed here, so they're skipped.
+  const parse = text => text.replace(/\r/g, "").trim().split(/\n\n+/).map(block => {
+    const f = {};
+    for (const line of block.split("\n")) {
+      const m = line.match(/^([A-Za-z-]+):[ \t]*(.*)$/);
+      if (m) f[m[1]] = m[2];
+    }
+    return f;
+  }).filter(f => f.Package && f.Version);
+
+  const inline = s => s
+    .replace(/\*\*(.+?)\*\*/g, "<strong>$1</strong>")
+    .replace(/`([^`]+)`/g, "<code>$1</code>");
+
+  // ponytail: paragraphs, bullets, bold and inline code — all the release notes
+  // use. Headings, links and nested lists degrade to plain text. Escaped first,
+  // so note text can never inject markup.
+  const markdown = src => esc(src).replace(/\r/g, "").trim().split(/\n{2,}/).map(block => {
+    const lines = block.split("\n").filter(l => l.trim());
+    return lines.every(l => /^\s*[-*]\s+/.test(l))
+      ? "<ul>" + lines.map(l => "<li>" + inline(l.replace(/^\s*[-*]\s+/, "")) + "</li>").join("") + "</ul>"
+      : "<p>" + inline(lines.join(" ")) + "</p>";
+  }).join("");
+
+  const card = ({ id, latest, builds }) => {
+    const src = (latest.Filename || "").match(/^https:\/\/github\.com\/[^/]+\/[^/]+/);
+    const chips = builds
+      .filter(b => LABEL[b.Architecture])
+      .sort((a, b) => ORDER.indexOf(a.Architecture) - ORDER.indexOf(b.Architecture))
+      .map(b => `<a class="chip" href="${esc(b.Filename)}" title="Download ${esc(b.Architecture)} · ${size(+b.Size || 0)}"><b>${LABEL[b.Architecture]}</b></a>`)
+      .join("\n        ");
+    return `<article class="pkg" data-pkg="${esc(id)}">
+      <div class="pkg-head">
+        <h3>${esc(latest.Name || id)}</h3>
+        <code class="pkg-id">${esc(id)}</code>
+        <span class="pkg-ver">${esc(latest.Version)}</span>
+      </div>
+      <p class="pkg-desc">${esc(latest.Description || "")}</p>
+      <div class="pkg-foot">
+        ${chips}
+        ${src ? `<a class="src-link" href="${src[0]}">Source ↗</a>` : ""}
+      </div>
+    </article>`;
+  };
+
+  // Latest release notes per package, from the same depiction JSON Sileo reads.
+  const changelog = ({ id, latest }) => {
+    if (!latest.SileoDepiction) return;
+    // strip the host so this stays same-origin (and works on a local preview)
+    fetch(latest.SileoDepiction.replace(/^https?:\/\/[^/]+\//, ""), { cache: "no-cache" })
+      .then(r => r.ok ? r.json() : Promise.reject())
+      .then(d => {
+        const views = (d.tabs || []).find(t => t.tabname === "Changelog")?.views || [];
+        const head = views.find(v => v.class === "DepictionSubheaderView");
+        const body = views.find(v => v.class === "DepictionMarkdownView");
+        const art = document.querySelector(`[data-pkg="${CSS.escape(id)}"]`);
+        if (!head || !body || !art) return;
+        art.insertAdjacentHTML("beforeend",
+          `<details class="pkg-changelog"><summary>What's new in ${esc(head.title)}</summary>${markdown(body.markdown)}</details>`);
+      })
+      .catch(() => {});
+  };
+
+  const packages = async () => {
+    const res = await fetch("Packages", { cache: "no-cache" });
+    if (!res.ok) throw new Error(res.status);
+    const stanzas = parse(await res.text());
+    if (!stanzas.length) throw new Error("empty index");
+
+    const byId = new Map();
+    for (const s of stanzas) byId.set(s.Package, (byId.get(s.Package) || []).concat(s));
+
+    const cards = [...byId].sort((a, b) => a[0].localeCompare(b[0])).map(([id, all]) => {
+      all.sort(newestFirst);
+      // chips describe the newest version — what you actually get if you install now
+      return { id, latest: all[0], builds: all.filter(s => s.Version === all[0].Version) };
+    });
+
+    document.getElementById("pkg-grid").innerHTML = cards.map(card).join("\n");
+    document.getElementById("pkg-note").textContent =
+      `${cards.length} package${cards.length === 1 ? "" : "s"}, ${stanzas.length} builds indexed. Sources are on GitHub.`;
+    cards.forEach(changelog);
+  };
+
+  // Authoritative build time, straight from the index the clients read.
+  const stamped = async () => {
+    const res = await fetch("Release", { cache: "no-cache" });
+    if (!res.ok) return;
+    const m = (await res.text()).match(/^Date:[ \t]*(.+)$/m);
+    const d = m && new Date(m[1].trim());
+    if (!d || isNaN(d)) return;
+    const el = document.getElementById("last-updated");
+    el.dateTime = d.toISOString();
+    el.textContent = d.toISOString().replace(/\.\d+Z$/, "Z");
+    document.getElementById("updated").hidden = false;
+  };
+
+  packages().catch(() => {});
+  stamped().catch(() => {});
+})();
+</script>
 </body>
 </html>

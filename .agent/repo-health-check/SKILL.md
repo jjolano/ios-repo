@@ -20,7 +20,7 @@ After the GitHub Releases migration, the git tree should contain **no .deb files
 Every `Filename:` must be an absolute release URL, none may leak `.stage/`:
 
 ```sh
-grep -c "^Filename: https://github.com/jjolano/ios-repo/releases/download/" Packages
+grep -c "^Filename: https://github.com/jjolano/" Packages   # must equal the total above
 grep -c "^Filename: \.stage" Packages   # must be 0
 ```
 
