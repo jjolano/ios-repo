@@ -13,7 +13,10 @@ for repo in $SOURCE_REPOS; do
   found=0
   for tag in $(gh release list -R "$repo" --json tagName -q '.[].tagName'); do
     # skip releases with no .deb assets (e.g. source-only releases)
-    meta=$(gh release view "$tag" -R "$repo" --json tagName,publishedAt,body,assets)
+    # a release can vanish between list and view (deleted/edited) — that is a
+    # transient race, not a prune; the next poll picks it up again.
+    meta=$(gh release view "$tag" -R "$repo" --json tagName,publishedAt,body,assets) \
+      || { echo "warning: $repo $tag release vanished during poll; skipping" >&2; continue; }
     total=$(printf '%s' "$meta" | jq -r '[.assets[] | select(.name | endswith(".deb"))] | length')
     [ "$total" -gt 0 ] || continue
     # keep release metadata (publishedAt, notes) for the Changelog depiction tab
