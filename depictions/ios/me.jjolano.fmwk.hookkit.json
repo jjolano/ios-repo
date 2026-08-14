@@ -32,6 +32,15 @@
       "views": [
         {
           "class": "DepictionSubheaderView",
+          "title": "2.4.0-1",
+          "subtitle": "2026-08-14"
+        },
+        {
+          "class": "DepictionMarkdownView",
+          "markdown": "Performance release: hook-install and private-symbol lookup costs cut by an order of magnitude, with on-device A/B validation showing launch CPU flat against the previous release.\n\n**The performance work (since 2.3.0-1):**\n- fishhook: rebinds batched into one image walk per backend (nativeBatch) — installing N C-function hooks cost N full image walks (~600 images each); now one walk per backend, O(hooks × images) → O(images). Partial failures reported honestly (HK_ERR_PARTIAL)\n- fishhook: shared GOT boundary pages preserved (no more permanently-writable GOT pages)\n- Preflight: last probed VM region memoized — repeat vm_region_64 traps skipped on the hot path\n- findSymbolInImage: leading underscore stripped before the image walk, and the futile walk dropped when the symbol is already resolved\n- Private-symbol scan: cache dylib entries indexed (binary search replaces the O(5000) linear scan per image) and the NULL-image scan no longer dlopens every loaded image — per-lookup cost ~50–150ms → ~2–5ms\n- Substitutor: auto-cover ops grouped by backend, one native batch each\n- Inline guard: success-path printf noise removed\n\n**On-device validation** (iPhone 7, iOS 15.8.3, ElleKit, ShadowHarness): full 16-config A/B sweep of the new build against the installed 2.4.0 baseline — all groups flat at 0.72s min-of-5 launch CPU, zero regressions; Shadow 4.0.0 compatibility confirmed.\n\nPackages: iphoneos-arm (rooted), iphoneos-arm64 (rootless), iphoneos-arm64e (roothide)."
+        },
+        {
+          "class": "DepictionSubheaderView",
           "title": "2.3.0-1",
           "subtitle": "2026-08-12"
         },
