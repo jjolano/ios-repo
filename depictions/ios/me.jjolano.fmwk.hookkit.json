@@ -32,6 +32,15 @@
       "views": [
         {
           "class": "DepictionSubheaderView",
+          "title": "2.5.0-1",
+          "subtitle": "2026-08-15"
+        },
+        {
+          "class": "DepictionMarkdownView",
+          "markdown": "HookKit 2.5.0 deepens the backend boundaries and makes automatic routing operation-aware while keeping the public `HKSubstitutor` ABI stable.\n\nHighlights:\n- Automatic function hooks now select and fall back by operation, with fail-closed preflight and grouped backend/technique batch drains.\n- Original-pointer publication is centralized and regression-tested so provider-owned and facade-owned publication paths cannot silently diverge.\n- Backend adapters were simplified and hardened around explicit capability, ownership, batching, and error contracts.\n- The public headers are flattened into `<HookKit/HookKit.h>`; consumers still importing `<HookKit/Compat.h>` must switch to the umbrella header.\n- Dobby was rebuilt with a new-ABI arm64e slice, restoring the Dobby backend on modern arm64e builds.\n- Release verification now covers legacy rootful, modern rootful, rootless, and RootHide lanes; Linux can also assemble the modern new-ABI arm64e toolchain.\n\nOn-device validation: the exact rootless CI artifact was installed on an iPhone 7 running iOS 15.8.3 with Dopamine, ElleKit, and Shadow 4.0.0. Dobby inline hooks, native inline hooks, callable originals, Objective-C message hooks, and executable-memory patching all passed.\n\nThe arm64e Dobby slice is link-, ABI-, and symbol-verified in CI, but was not runtime-tested on an arm64e device for this release.\n\nPackages:\n- `me.jjolano.fmwk.hookkit.legacy_2.5.0-1_iphoneos-arm.deb` — legacy rootful, iOS 9–13.\n- `me.jjolano.fmwk.hookkit_2.5.0-1_iphoneos-arm.deb` — modern rootful, iOS 14+.\n- `me.jjolano.fmwk.hookkit_2.5.0-1_iphoneos-arm64.deb` — rootless, iOS 15+.\n- `me.jjolano.fmwk.hookkit_2.5.0-1_iphoneos-arm64e.deb` — RootHide, iOS 15–17.\n"
+        },
+        {
+          "class": "DepictionSubheaderView",
           "title": "2.4.0-1",
           "subtitle": "2026-08-14"
         },
