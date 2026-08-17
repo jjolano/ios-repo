@@ -8,14 +8,26 @@ rm -rf "$STAGE" && mkdir -p "$STAGE"
 # Order matters: project repos first so they win the dedupe below.
 SOURCE_REPOS="jjolano/HookKit jjolano/Shadow"
 
+# gh hits the GitHub API, which occasionally 503s; retry transient failures
+# instead of failing the whole poll. Persistent failures still surface (the
+# per-repo guard below turns a repo that yields nothing into a hard error).
+gh_retry() {
+  tries=0
+  until "$@"; do
+    tries=$((tries + 1))
+    [ "$tries" -ge 5 ] && return 1
+    sleep 5
+  done
+}
+
 : > "$STAGE/releases.ndjson"
 for repo in $SOURCE_REPOS; do
   found=0
-  for tag in $(gh release list -R "$repo" --json tagName -q '.[].tagName'); do
+  for tag in $(gh_retry gh release list -R "$repo" --json tagName -q '.[].tagName'); do
     # skip releases with no .deb assets (e.g. source-only releases)
     # a release can vanish between list and view (deleted/edited) — that is a
     # transient race, not a prune; the next poll picks it up again.
-    meta=$(gh release view "$tag" -R "$repo" --json tagName,publishedAt,body,assets) \
+    meta=$(gh_retry gh release view "$tag" -R "$repo" --json tagName,publishedAt,body,assets) \
       || { echo "warning: $repo $tag release vanished during poll; skipping" >&2; continue; }
     total=$(printf '%s' "$meta" | jq -r '[.assets[] | select(.name | endswith(".deb"))] | length')
     [ "$total" -gt 0 ] || continue
@@ -24,7 +36,7 @@ for repo in $SOURCE_REPOS; do
       '{repo: $repo, tag: .tagName, publishedAt: .publishedAt, body: .body}' \
       >> "$STAGE/releases.ndjson"
     mkdir -p "$STAGE/$repo/$tag"
-    gh release download "$tag" -R "$repo" --dir "$STAGE/$repo/$tag" --pattern '*.deb'
+    gh_retry gh release download "$tag" -R "$repo" --dir "$STAGE/$repo/$tag" --pattern '*.deb'
     # guard: every release must yield its .deb assets; a partial download means
     # a degraded index — abort instead of publishing one.
     got=$(ls "$STAGE/$repo/$tag"/*.deb 2>/dev/null | wc -l)
