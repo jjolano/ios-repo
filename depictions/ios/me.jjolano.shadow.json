@@ -140,15 +140,6 @@
         },
         {
           "class": "DepictionSubheaderView",
-          "title": "3.6.3",
-          "subtitle": "2023-02-02"
-        },
-        {
-          "class": "DepictionMarkdownView",
-          "markdown": "This release includes some minor adjustments to prevent some crashes from 3.6.2.\r\n\r\nv3.6.2 release notes copied:\r\n\r\nThis release features a major general performance improvement, as well as some tweak compatibility improvements.\r\n\r\n- Reimplemented some previously disabled hooks\r\n- Adjusted some function calls to be safer\r\n- Reverted injection changes from 3.6.0 for stability reasons\r\n- Significant load time improvement for Shadow-enabled apps\r\n- Further reorganization of codebase\r\n- Updated Arabic translations\r\n- Added Simplified Chinese translation\r\n\r\nDue to tweak compatibility improvements, Allow Tweak Resources is now deprecated. Please let me know if this option is still necessary."
-        },
-        {
-          "class": "DepictionSubheaderView",
           "title": "3.6.2",
           "subtitle": "2023-02-02"
         },
