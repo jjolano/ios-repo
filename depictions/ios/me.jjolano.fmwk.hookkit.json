@@ -32,6 +32,15 @@
       "views": [
         {
           "class": "DepictionSubheaderView",
+          "title": "2.5.1-1",
+          "subtitle": "2026-08-18"
+        },
+        {
+          "class": "DepictionMarkdownView",
+          "markdown": "HookKit 2.5.1 is a patch release with two robustness fixes, both reported from Shadow integration on-device:\n\n**1. Fail-soft hookFunction: on unhookable dyld-cache trap stubs**\n\nThe dyld shared cache builds dyld's private APIs (e.g. dyld_image_get_installname) as stubs whose entry instruction raises SIGTRAP when executed — they exist for symbolication, not for calling. Dispatching one to a hooking backend crashed the process (SIGTRAP) instead of returning an error. hookFunction: now detects the trap entry (BRK/HLT/UDF) before any backend runs and returns HK_ERR: the target is permanently unhookable, so retrying is pointless. Both the auto-cover and the direct path are guarded.\n\n**2. Fast NULL-image symbol lookup**\n\nfindSymbolInImage:NULL used to walk every loaded image's symbol table (hundreds of images per lookup, seconds per symbol for dyld's private symbols). The facade now resolves exported symbols via dlsym (microseconds) and private symbols via the dyld shared cache's local-symbols table (one scan over the loaded cache dylibs' already-mapped nlist ranges — no per-image walk). The backend walk remains the fallback for symbols only non-cache images carry.\n\n**Verification**\n\n- Host test suite passes (relocator, Swift ABI, substitute classifier, inline guard)\n- Release lanes pass check-compat and check-exports (legacy rootful, modern rootful, rootless, RootHide)\n- On-device: the exact rootless artifact was installed on an iPhone 7 running iOS 15.8.3 (Dopamine/ElleKit/Shadow). All hooking checks pass; dyld private-symbol lookup resolves in 0.0ms; hookFunction: on a dyld symbol returns an error instead of crashing."
+        },
+        {
+          "class": "DepictionSubheaderView",
           "title": "2.5.0-1",
           "subtitle": "2026-08-15"
         },
