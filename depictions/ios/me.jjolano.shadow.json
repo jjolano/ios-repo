@@ -299,6 +299,15 @@
         {
           "class": "DepictionMarkdownView",
           "markdown": "- Fixes a rare crash with Runtime Symbol Lookups\r\n- Added additional skip hooks to Detection Frameworks"
+        },
+        {
+          "class": "DepictionSubheaderView",
+          "title": "3.3.2",
+          "subtitle": "2022-11-30"
+        },
+        {
+          "class": "DepictionMarkdownView",
+          "markdown": "- I am now able to test on Substitute + palera1n.\r\n- Adjusted Runtime Class Lookups and Enforce Sandbox hooks to prevent crashes for Substitute users\r\n- Further performance improvements."
         }
       ]
     }
