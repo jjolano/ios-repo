@@ -1,0 +1,30 @@
+{
+  "class": "DepictionTabView",
+  "tabs": [
+    {
+      "class": "DepictionStackView",
+      "tabname": "Details",
+      "views": [
+        {
+          "class": "DepictionHeaderView",
+          "title": "HookKit Frida Gum Provider",
+          "subtitle": "me.jjolano.fmwk.hookkit.gum"
+        },
+        {
+          "class": "DepictionMarkdownView",
+          "markdown": "Optional Frida Gum provider for HookKit. Requires the matching HookKit framework package."
+        },
+        {
+          "class": "DepictionMarkdownView",
+          "markdown": "**Supported variants:** modern rootful (`iphoneos-arm`, iOS 14+), rootless (`iphoneos-arm64`, iOS 15+), RootHide (`iphoneos-arm64e`, iOS 15+)"
+        },
+        {
+          "class": "DepictionTableButtonView",
+          "title": "Source Code",
+          "action": "https://github.com/jjolano/HookKit",
+          "openExternal": true
+        }
+      ]
+    }
+  ]
+}
