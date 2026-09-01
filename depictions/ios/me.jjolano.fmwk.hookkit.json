@@ -32,6 +32,15 @@
       "views": [
         {
           "class": "DepictionSubheaderView",
+          "title": "3.0.0-1",
+          "subtitle": "2026-09-01"
+        },
+        {
+          "class": "DepictionMarkdownView",
+          "markdown": "## HookKit 3.0.0\n\nHookKit 3.0 adds a new C API for building and installing hooks. Existing HookKit v1 and v2 projects remain supported.\n\n### New Hooking API\n\n- Create a runtime, add hooks to a plan, then analyze, prepare, and commit the plan.\n- Get a separate result for each hook target, including whether it changed and whether an original function is available.\n- Supports Objective-C methods, import rebinding, memory patches, native inline hooks, relocating inline hooks, and Swift vtable hooks.\n- HookKit finds available backends at runtime. Use automatic routing or select specific backends for an individual runtime.\n\n### Existing Projects\n\n- Existing HookKit v1 and v2 binaries can load and run without recompiling.\n- Existing HookKit v1 and v2 source continues to compile, including `HKSubstitutor` and the six original module classes.\n- Logos tweaks can use HookKit with two Makefile lines and no source rewrite.\n- Projects that call Substrate, Substitute, libhooker, ElleKit, or memory-hook APIs directly can use `HookKitCompat.h`.\n- Modulous plug-in bundles are no longer loaded.\n- Older provider type and category APIs remain available for source compatibility, but no longer choose the hook engine. HookKit routes hooks at runtime instead.\n- See the [migration guide](https://github.com/jjolano/HookKit/blob/v3.0.0/docs/MIGRATION.md) and [compatibility details](https://github.com/jjolano/HookKit/blob/v3.0.0/docs/3.0/LEGACY_ABI.md).\n\n### Packages\n\n- Legacy rootful: iOS 9-13, including armv7, armv7s, arm64, and old-ABI arm64e.\n- Modern rootful: iOS 14+.\n- Rootless: iOS 15+.\n- RootHide: iOS 15+ with no upper iOS-version package limit.\n- Frida Gum is a separate optional package for modern rootful, rootless, and RootHide installs.\n- The modern rootful Frida Gum package supports iOS 14+; rootless and RootHide Gum packages support iOS 15+.\n"
+        },
+        {
+          "class": "DepictionSubheaderView",
           "title": "2.5.1-1",
           "subtitle": "2026-08-18"
         },
