@@ -32,6 +32,15 @@
       "views": [
         {
           "class": "DepictionSubheaderView",
+          "title": "3.0.1-1",
+          "subtitle": "2026-09-04"
+        },
+        {
+          "class": "DepictionMarkdownView",
+          "markdown": "Patch release. No ABI or export changes since v3.0.0 — binaries linked against 3.0.0, v1, or v2.x continue to load (compatibility version stays 2.5.1).\n\n## Fixes\n- **Provider discovery is now jailbreak-agnostic.** Frida Gum, ElleKit/libhooker, and Substitute/CydiaSubstrate dylib paths are resolved through the jailbreak-root seam (`jbroot()` / libroot) instead of a hardcoded `/var/jb` + `/` candidate pair. This restores those provider engines on RootHide, whose randomized jbroot never matched the old literals.\n\n## Packaging\n- Unified package display names across lanes; the legacy package keeps a `(Legacy)` suffix to stay distinguishable in repo browsers.\n\n## Assets\nPer-lane packages (framework + optional Frida Gum provider):\n\n| Lane | Arch | Framework | Gum |\n|---|---|---|---|\n| Rootful (legacy, iOS 9–13) | `iphoneos-arm` | `hookkit-rootful-legacy.deb` | — |\n| Rootful (modern, iOS 14+) | `iphoneos-arm` | `hookkit-rootful-modern.deb` | `hookkit-rootful-modern-gum.deb` |\n| Rootless | `iphoneos-arm64` | `hookkit-rootless.deb` | `hookkit-rootless-gum.deb` |\n| RootHide | `iphoneos-arm64e` | `hookkit-roothide.deb` | `hookkit-roothide-gum.deb` |\n"
+        },
+        {
+          "class": "DepictionSubheaderView",
           "title": "3.0.0-1",
           "subtitle": "2026-09-01"
         },
