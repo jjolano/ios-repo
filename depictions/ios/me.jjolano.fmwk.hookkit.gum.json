@@ -32,6 +32,15 @@
       "views": [
         {
           "class": "DepictionSubheaderView",
+          "title": "3.0.2-1",
+          "subtitle": "2026-09-06"
+        },
+        {
+          "class": "DepictionMarkdownView",
+          "markdown": "Patch release. No ABI or export changes since v3.0.1 — binaries linked against 3.0.x, v1, or v2.x continue to load (compatibility version stays 2.5.1).\n\n## Fixes\n- **Undefined behavior in the arm64 relocator.** The branch-target calculation in `hk_arm64.c` left-shifted negative offsets (signed-shift UB, caught by UBSan). Pure arithmetic fix via unsigned masking and multiply-based scaling; no behavior change on working toolchains. Verified on-device (iPhone 7, iOS 15.8.3, rootless): full device smoke passes, 0 failures.\n\n## CI\n- New ASan+UBSan lane over the host suite, shellcheck + real-Mach-O resolver conformance up front, device smokes compile-checked on all four lanes, Shadow 3.7.6 gate now asserts retained facade markers rather than commit ancestry.\n\n## Assets\nPer-lane packages (framework + optional Frida Gum provider):\n\n| Lane | Arch | Framework | Gum |\n|---|---|---|---|\n| Rootful (legacy, iOS 9–13) | `iphoneos-arm` | `hookkit-rootful-legacy.deb` | — |\n| Rootful (modern, iOS 14+) | `iphoneos-arm` | `hookkit-rootful-modern.deb` | `hookkit-rootful-modern-gum.deb` |\n| Rootless | `iphoneos-arm64` | `hookkit-rootless.deb` | `hookkit-rootless-gum.deb` |\n| RootHide | `iphoneos-arm64e` | `hookkit-roothide.deb` | `hookkit-roothide-gum.deb` |"
+        },
+        {
+          "class": "DepictionSubheaderView",
           "title": "3.0.1-1",
           "subtitle": "2026-09-04"
         },
