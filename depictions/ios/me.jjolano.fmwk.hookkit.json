@@ -32,6 +32,15 @@
       "views": [
         {
           "class": "DepictionSubheaderView",
+          "title": "3.0.4-1",
+          "subtitle": "2026-09-08"
+        },
+        {
+          "class": "DepictionMarkdownView",
+          "markdown": "Patch release. No public API or ABI changes; compatibility version remains `2.5.1`.\n\n## Changes\n\n- Reduce repeated shared-cache symbol scans when preparing import hooks across multiple loaded images.\n- Replace cached rebind plans with request-local lookup metadata, keeping import-slot values and image validation fresh.\n- Add regression coverage for lookup reuse, invalidation, and allocation fallback, plus a multi-importer benchmark.\n\n## Packages\n\nGum is optional and requires the matching framework version.\n\n| Lane | Framework | Optional Gum |\n| --- | --- | --- |\n| Rootful legacy (iOS 9-13) | `hookkit-rootful-legacy.deb` | None |\n| Rootful modern (iOS 14+) | `hookkit-rootful-modern.deb` | `hookkit-rootful-modern-gum.deb` |\n| Rootless (iOS 15+) | `hookkit-rootless.deb` | `hookkit-rootless-gum.deb` |\n| RootHide (iOS 15+) | `hookkit-roothide.deb` | `hookkit-roothide-gum.deb` |\n\n**Full Changelog:** https://github.com/jjolano/HookKit/compare/v3.0.3...v3.0.4\n"
+        },
+        {
+          "class": "DepictionSubheaderView",
           "title": "3.0.3-1",
           "subtitle": "2026-09-08"
         },
