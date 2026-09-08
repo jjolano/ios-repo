@@ -517,6 +517,69 @@ Tag: role::developer
 Author: jjolano <jjolano@me.com>
 Name: HookKit Framework
 
+Package: me.jjolano.fmwk.hookkit
+Version: 3.0.3-1
+Architecture: iphoneos-arm
+Maintainer: jjolano <jjolano@me.com>
+Installed-Size: 1004
+Depends: firmware (>= 14.0)
+Conflicts: me.jjolano.hkmodule.dobby, me.jjolano.hkmodule.ellekit, me.jjolano.hkmodule.fishhook, me.jjolano.hkmodule.libhooker, me.jjolano.hkmodule.substitute, me.jjolano.hkmodule.substrate, me.jjolano.fmwk.hookkit.legacy
+Replaces: me.jjolano.hkmodule.dobby, me.jjolano.hkmodule.ellekit, me.jjolano.hkmodule.fishhook, me.jjolano.hkmodule.libhooker, me.jjolano.hkmodule.substitute, me.jjolano.hkmodule.substrate, me.jjolano.fmwk.hookkit.legacy
+Filename: https://github.com/jjolano/HookKit/releases/download/v3.0.3/hookkit-rootful-modern.deb
+Size: 131120
+MD5sum: d9923c586ac713df388595861f615019
+SHA1: 01ae02bef1a5e78e0db183d7cae7672740813c51
+SHA256: 6548b568bc05463fa5ecf579a59378ea7735fc67837d763d991fb02a8b343be3
+Section: Development
+Description: An iOS developer framework for unified hooking methods.
+Depiction: https://ios.jjolano.me/depictions/ios/me.jjolano.fmwk.hookkit.html
+SileoDepiction: https://ios.jjolano.me/depictions/ios/me.jjolano.fmwk.hookkit.json
+Tag: role::developer
+Author: jjolano <jjolano@me.com>
+Name: HookKit Framework
+
+Package: me.jjolano.fmwk.hookkit
+Version: 3.0.3-1
+Architecture: iphoneos-arm64
+Maintainer: jjolano <jjolano@me.com>
+Installed-Size: 1004
+Depends: firmware (>= 15.0)
+Conflicts: me.jjolano.hkmodule.dobby, me.jjolano.hkmodule.ellekit, me.jjolano.hkmodule.fishhook, me.jjolano.hkmodule.libhooker, me.jjolano.hkmodule.substitute, me.jjolano.hkmodule.substrate, me.jjolano.fmwk.hookkit.legacy
+Replaces: me.jjolano.hkmodule.dobby, me.jjolano.hkmodule.ellekit, me.jjolano.hkmodule.fishhook, me.jjolano.hkmodule.libhooker, me.jjolano.hkmodule.substitute, me.jjolano.hkmodule.substrate, me.jjolano.fmwk.hookkit.legacy
+Filename: https://github.com/jjolano/HookKit/releases/download/v3.0.3/hookkit-rootless.deb
+Size: 132348
+MD5sum: e633fc794b5dd48c58dab5907a954c91
+SHA1: c3e4fd0d12f7a0d13c80a710e5c553fe057e066a
+SHA256: d5d92c98375031ae6a718d3958964c7e14d95ea182e8df70e834aca11e0d8b2a
+Section: Development
+Description: An iOS developer framework for unified hooking methods.
+Depiction: https://ios.jjolano.me/depictions/ios/me.jjolano.fmwk.hookkit.html
+SileoDepiction: https://ios.jjolano.me/depictions/ios/me.jjolano.fmwk.hookkit.json
+Tag: role::developer
+Author: jjolano <jjolano@me.com>
+Name: HookKit Framework
+
+Package: me.jjolano.fmwk.hookkit
+Version: 3.0.3-1
+Architecture: iphoneos-arm64e
+Maintainer: jjolano <jjolano@me.com>
+Installed-Size: 1004
+Depends: firmware (>= 15.0)
+Conflicts: me.jjolano.hkmodule.dobby, me.jjolano.hkmodule.ellekit, me.jjolano.hkmodule.fishhook, me.jjolano.hkmodule.libhooker, me.jjolano.hkmodule.substitute, me.jjolano.hkmodule.substrate, me.jjolano.fmwk.hookkit.legacy
+Replaces: me.jjolano.hkmodule.dobby, me.jjolano.hkmodule.ellekit, me.jjolano.hkmodule.fishhook, me.jjolano.hkmodule.libhooker, me.jjolano.hkmodule.substitute, me.jjolano.hkmodule.substrate, me.jjolano.fmwk.hookkit.legacy
+Filename: https://github.com/jjolano/HookKit/releases/download/v3.0.3/hookkit-roothide.deb
+Size: 131266
+MD5sum: 1cc3aeeec9cec0a04d6e4cab91e0a398
+SHA1: b6b1282ee942818964a7e836f29e499e66b11006
+SHA256: d6dd4eec84ddadabc0b33044d061af4938a8c34dc9467cce37830cc1cbc8dd8e
+Section: Development
+Description: An iOS developer framework for unified hooking methods.
+Depiction: https://ios.jjolano.me/depictions/ios/me.jjolano.fmwk.hookkit.html
+SileoDepiction: https://ios.jjolano.me/depictions/ios/me.jjolano.fmwk.hookkit.json
+Tag: role::developer
+Author: jjolano <jjolano@me.com>
+Name: HookKit Framework
+
 Package: me.jjolano.fmwk.hookkit.gum
 Version: 3.0.0-1
 Architecture: iphoneos-arm
@@ -688,6 +751,63 @@ Tag: role::developer
 Author: jjolano <jjolano@me.com>
 Name: HookKit Frida Gum Provider
 
+Package: me.jjolano.fmwk.hookkit.gum
+Version: 3.0.3-1
+Architecture: iphoneos-arm
+Maintainer: jjolano <jjolano@me.com>
+Installed-Size: 17508
+Depends: me.jjolano.fmwk.hookkit (= 3.0.3-1), firmware (>= 14.0)
+Filename: https://github.com/jjolano/HookKit/releases/download/v3.0.3/hookkit-rootful-modern-gum.deb
+Size: 1965562
+MD5sum: f4c4fb426f676b7b5d2f7dc9ca737234
+SHA1: cc050e89a8407b2a5245aa235acf3bcc74138f74
+SHA256: 54fd09aae9c927a019f48cb818a614cfc8ae8f2271a3445445d3342e5c1133b5
+Section: Development
+Description: Optional Frida Gum provider for HookKit.
+Depiction: https://ios.jjolano.me/depictions/ios/me.jjolano.fmwk.hookkit.gum.html
+SileoDepiction: https://ios.jjolano.me/depictions/ios/me.jjolano.fmwk.hookkit.gum.json
+Tag: role::developer
+Author: jjolano <jjolano@me.com>
+Name: HookKit Frida Gum Provider
+
+Package: me.jjolano.fmwk.hookkit.gum
+Version: 3.0.3-1
+Architecture: iphoneos-arm64
+Maintainer: jjolano <jjolano@me.com>
+Installed-Size: 16940
+Depends: me.jjolano.fmwk.hookkit (= 3.0.3-1), firmware (>= 15.0)
+Filename: https://github.com/jjolano/HookKit/releases/download/v3.0.3/hookkit-rootless-gum.deb
+Size: 1845754
+MD5sum: 207ea4be56008daaa5b5cd5c5f4e0411
+SHA1: 882b41d887cc7d58b0d34005ea354a066f46938f
+SHA256: e5d611c4d2f7f726e98447cf1b81ac8a294c73b92fc4634232beaebc1d96f11d
+Section: Development
+Description: Optional Frida Gum provider for HookKit.
+Depiction: https://ios.jjolano.me/depictions/ios/me.jjolano.fmwk.hookkit.gum.html
+SileoDepiction: https://ios.jjolano.me/depictions/ios/me.jjolano.fmwk.hookkit.gum.json
+Tag: role::developer
+Author: jjolano <jjolano@me.com>
+Name: HookKit Frida Gum Provider
+
+Package: me.jjolano.fmwk.hookkit.gum
+Version: 3.0.3-1
+Architecture: iphoneos-arm64e
+Maintainer: jjolano <jjolano@me.com>
+Installed-Size: 16940
+Depends: me.jjolano.fmwk.hookkit (= 3.0.3-1), firmware (>= 15.0)
+Filename: https://github.com/jjolano/HookKit/releases/download/v3.0.3/hookkit-roothide-gum.deb
+Size: 1844652
+MD5sum: b7d9ff5b25c3779560254462da74cdad
+SHA1: cc16d244a12907f6bd3aebde932c02b4cad0d47d
+SHA256: 23d162ec92138a2e1f8e59bca6b0947656d71c77b3f2d03c6307945579b0b986
+Section: Development
+Description: Optional Frida Gum provider for HookKit.
+Depiction: https://ios.jjolano.me/depictions/ios/me.jjolano.fmwk.hookkit.gum.html
+SileoDepiction: https://ios.jjolano.me/depictions/ios/me.jjolano.fmwk.hookkit.gum.json
+Tag: role::developer
+Author: jjolano <jjolano@me.com>
+Name: HookKit Frida Gum Provider
+
 Package: me.jjolano.fmwk.hookkit.legacy
 Version: 2.5.0-1
 Architecture: iphoneos-arm
@@ -782,6 +902,26 @@ Size: 196630
 MD5sum: ba99b82fe44f888a85e2b09fe5335d51
 SHA1: eaf78312ed6c2bb2326f406968d9802adb2dbc72
 SHA256: 9b6682ca6b699d7feeb9f4fd6a3ac6bbb4ec787935236e81b88aebf787133bf3
+Section: Development
+Description: An iOS developer framework for unified hooking methods.
+Tag: role::developer
+Author: jjolano <jjolano@me.com>
+Name: HookKit Framework (Legacy)
+
+Package: me.jjolano.fmwk.hookkit.legacy
+Version: 3.0.3-1
+Architecture: iphoneos-arm
+Maintainer: jjolano <jjolano@me.com>
+Installed-Size: 1436
+Depends: firmware (>= 9.0), firmware (<< 14.0)
+Conflicts: me.jjolano.hkmodule.dobby, me.jjolano.hkmodule.ellekit, me.jjolano.hkmodule.fishhook, me.jjolano.hkmodule.libhooker, me.jjolano.hkmodule.substitute, me.jjolano.hkmodule.substrate, me.jjolano.fmwk.hookkit
+Replaces: me.jjolano.hkmodule.dobby, me.jjolano.hkmodule.ellekit, me.jjolano.hkmodule.fishhook, me.jjolano.hkmodule.libhooker, me.jjolano.hkmodule.substitute, me.jjolano.hkmodule.substrate, me.jjolano.fmwk.hookkit
+Provides: me.jjolano.hkmodule.dobby, me.jjolano.hkmodule.ellekit, me.jjolano.hkmodule.fishhook, me.jjolano.hkmodule.libhooker, me.jjolano.hkmodule.substitute, me.jjolano.hkmodule.substrate, me.jjolano.fmwk.hookkit
+Filename: https://github.com/jjolano/HookKit/releases/download/v3.0.3/hookkit-rootful-legacy.deb
+Size: 196334
+MD5sum: b8feb956c031c2b9d6377d8cd94edbc1
+SHA1: dcb5922e9f625bae63b2e9e90cdd9e346227e07b
+SHA256: ecd8f73a5a7c1f7c33f38c4972a9202f6ea2e271074d739c058ad594c5030f29
 Section: Development
 Description: An iOS developer framework for unified hooking methods.
 Tag: role::developer

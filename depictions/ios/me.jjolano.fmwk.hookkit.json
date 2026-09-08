@@ -32,6 +32,15 @@
       "views": [
         {
           "class": "DepictionSubheaderView",
+          "title": "3.0.3-1",
+          "subtitle": "2026-09-08"
+        },
+        {
+          "class": "DepictionMarkdownView",
+          "markdown": "Patch release. No public API or ABI changes; compatibility version remains `2.5.1`.\n\n## Fixes\n\n- Publish Logos original pointers before activating hooks.\n- Preserve legacy original pointers after partial or uncertain writes.\n- Reclaim unused continuation resources without freeing active hooks.\n- Improve mutation tracking and serialize native memory writes.\n- Prevent rebind cache eviction during chained-fixup parsing.\n- Correct continuation backing and replacement-pointer metadata.\n\n## Improvements\n\n- Reduce ownership-key and artifact allocations.\n- Remove unused internal code and redundant wrappers.\n- Fix macOS test portability and CI toolchain/package staging.\n\n## Packages\n\nGum is optional and requires the matching framework version.\n\n| Lane | Framework | Optional Gum |\n| --- | --- | --- |\n| Rootful legacy (iOS 9-13) | `hookkit-rootful-legacy.deb` | None |\n| Rootful modern (iOS 14+) | `hookkit-rootful-modern.deb` | `hookkit-rootful-modern-gum.deb` |\n| Rootless (iOS 15+) | `hookkit-rootless.deb` | `hookkit-rootless-gum.deb` |\n| RootHide (iOS 15+) | `hookkit-roothide.deb` | `hookkit-roothide-gum.deb` |\n\n**Full Changelog:** https://github.com/jjolano/HookKit/compare/v3.0.2...v3.0.3\n"
+        },
+        {
+          "class": "DepictionSubheaderView",
           "title": "3.0.2-1",
           "subtitle": "2026-09-06"
         },
