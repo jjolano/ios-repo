@@ -36,7 +36,7 @@ for repo in $SOURCE_REPOS; do
       '{repo: $repo, tag: .tagName, publishedAt: .publishedAt, body: .body}' \
       >> "$STAGE/releases.ndjson"
     mkdir -p "$STAGE/$repo/$tag"
-    gh_retry gh release download "$tag" -R "$repo" --dir "$STAGE/$repo/$tag" --pattern '*.deb'
+    gh_retry gh release download "$tag" -R "$repo" --dir "$STAGE/$repo/$tag" --pattern '*.deb' --clobber
     # guard: every release must yield its .deb assets; a partial download means
     # a degraded index — abort instead of publishing one.
     got=$(ls "$STAGE/$repo/$tag"/*.deb 2>/dev/null | wc -l)
