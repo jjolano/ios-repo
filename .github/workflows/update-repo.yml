@@ -18,7 +18,7 @@ jobs:
         run: |
           # google-chrome repo hash-mismatches often; unneeded here — drop it
           # so a third-party index flake can't fail the whole poll.
-          sudo rm -f /etc/apt/sources.list.d/google-chrome.list*
+          sudo rm -f /etc/apt/sources.list.d/google-chrome.*
           sudo apt-get update || sudo apt-get update
           sudo apt-get install -y dpkg-dev zstd apt-utils
       - name: Set git identity
