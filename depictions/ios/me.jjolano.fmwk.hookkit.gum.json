@@ -32,6 +32,15 @@
       "views": [
         {
           "class": "DepictionSubheaderView",
+          "title": "3.0.5-1",
+          "subtitle": "2026-09-13"
+        },
+        {
+          "class": "DepictionMarkdownView",
+          "markdown": "Patch release. No public API or ABI changes; compatibility version remains `2.5.1`.\n\n## Changes\n\n- Build a process-scoped export-name index for the live shared cache, so repeated per-symbol rebind preparations replay matches instead of rescanning the full v2-v4 patch export table.\n- Restrict index reuse to immutable live shared-cache metadata; caller-supplied and synthetic ranges keep reading current bytes, while malformed metadata, allocation failures, and unknown cache identities fall back to the direct scan with identical status, sites, and order.\n- Add regression coverage for indexed traversal across v2-v4, duplicate definitions, cache identity, mutable-range and allocation fallback, plus a multi-symbol/importer benchmark.\n\n## Packages\n\nGum is optional and requires the matching framework version.\n\n| Lane | Framework | Optional Gum |\n| --- | --- | --- |\n| Rootful legacy (iOS 9-13) | `hookkit-rootful-legacy.deb` | None |\n| Rootful modern (iOS 14+) | `hookkit-rootful-modern.deb` | `hookkit-rootful-modern-gum.deb` |\n| Rootless (iOS 15+) | `hookkit-rootless.deb` | `hookkit-rootless-gum.deb` |\n| RootHide (iOS 15+) | `hookkit-roothide.deb` | `hookkit-roothide-gum.deb` |\n\n**Full Changelog:** https://github.com/jjolano/HookKit/compare/v3.0.4...v3.0.5\n"
+        },
+        {
+          "class": "DepictionSubheaderView",
           "title": "3.0.4-1",
           "subtitle": "2026-09-08"
         },
